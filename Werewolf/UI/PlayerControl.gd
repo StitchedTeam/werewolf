@@ -3,6 +3,8 @@ extends Node2D
 var dragging = false
 var drag_ended = false
 
+var position_dictionary = {"north": 0, "south": 0, "east" : 0, "west": 0, "northeast": 0, "northwest": 0, "southeast": 0, "southwest": 0}
+
 func _ready():
 	pass
 
@@ -31,18 +33,42 @@ func drag_and_place():
 		if $Input_area.overlaps_area($Outside_area):
 			$Inside_area.position = $Input_area.position
 	
-	# To bring control to the right position after drag ended
+	# To bring control to the correct position after drag ended
 	if drag_ended:
-		var north = $Inside_area.position.distance_to($Positions/North)
-		var south = $Inside_area.position.distance_to($Positions/South)
-		var east = $Inside_area.position.distance_to($Positions/East)
-		var west = $Inside_area.position.distance_to($Positions/West)
-		var northeast = $Inside_area.position.distance_to($Positions/Northeast)
-		var northwest = $Inside_area.position.distance_to($Positions/Northwest)
-		var southeast = $Inside_area.position.distance_to($Positions/SouthEast)
-		var southwest = $Inside_area.position.distance_to($Positions/SouthWest)
-		
-		
-		#if
+		build_position_dictionary()
+		drag_ended = false
 	
 	pass
+	
+
+# Brings between the control and all eight positions to the dictionary
+func build_position_dictionary():
+	
+	position_dictionary["north"] = $Inside_area.position.distance_to(($Positions/North).position)
+	position_dictionary["south"] = $Inside_area.position.distance_to(($Positions/South).position)
+	position_dictionary["east"] = $Inside_area.position.distance_to(($Positions/East).position)
+	position_dictionary["west"] = $Inside_area.position.distance_to(($Positions/West).position)
+	position_dictionary["northeast"] = $Inside_area.position.distance_to(($Positions/NorthEast).position)
+	position_dictionary["northwest"] = $Inside_area.position.distance_to(($Positions/NorthWest).position)
+	position_dictionary["southeast"] = $Inside_area.position.distance_to(($Positions/SouthEast).position)
+	position_dictionary["southwest"] = $Inside_area.position.distance_to(($Positions/SouthWest).position)
+	
+	pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
