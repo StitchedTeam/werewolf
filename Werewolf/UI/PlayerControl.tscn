@@ -96,3 +96,5 @@ position = Vector2( 40, 0 )
 [node name="West" type="Position2D" parent="Positions"]
 position = Vector2( -40, 0 )
 
+[node name="Origin" type="Position2D" parent="Positions"]
+
