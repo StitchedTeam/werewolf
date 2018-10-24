@@ -4,9 +4,10 @@ var human = true
 var horax = 0
 var vertax = 0
 
-var speed = 1
+var speed = 5
 
 func _ready():
+	$AnimationPlayer.play("HumanIdle")
 	pass
 
 func _physics_process(delta):

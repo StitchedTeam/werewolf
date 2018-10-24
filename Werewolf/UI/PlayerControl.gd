@@ -1,19 +1,21 @@
 extends Node2D
 
+var auto_enabled = false
+
 var dragging = false
 var drag_ended = false
 
 var position_dictionary = {"N": 0, "S": 0, "E" : 0, "W": 0, "NE": 0, "NW": 0, "SE": 0, "SW": 0}
 var dic
+var resultant_axis = Dictionary()
 
 func _ready():
 	pass
 
 func _process(delta):
-	drag_and_place()	
+	drag_and_place()
 	# To make Input Area's empty collider follow mouse position
-	$Input_area.position = get_global_mouse_position()
-
+	$Input_area.position = get_local_mouse_position()
 	pass
 
 func drag_and_place():
@@ -32,7 +34,18 @@ func drag_and_place():
 			$Inside_area.position = $Input_area.position
 	
 	# To bring control to the correct position after drag ended
-	if drag_ended:
+	if auto_enabled:
+		if drag_ended:
+			if !($Inside_area.overlaps_area($Center_area)):
+				build_position_dictionary()
+			else:
+				$Inside_area.position = $Positions/Origin.position
+				resultant_axis.clear()
+				drag_ended = false
+	else:
+		if drag_ended:
+			resultant_axis.clear()
+			$Inside_area.position = $Positions/Origin.position
 		build_position_dictionary()
 	pass
 	
@@ -104,7 +117,6 @@ func clean_dic():
 			else:
 				dic.erase("N")
 				dic.erase("W")
-		
 	elif dic.has("S"):
 		if dic.has("E"):
 			if dic["S"] > dic["E"]:
@@ -192,7 +204,6 @@ func clean_dic():
 			else:
 				dic.erase("N")
 				dic.erase("SE")
-	
 	elif dic.has("S"):
 		if dic.has("NE"):
 			if dic["S"] > dic["NE"]:
@@ -226,7 +237,6 @@ func clean_dic():
 			else:
 				dic.erase("S")
 				dic.erase("SE")
-		
 	elif dic.has("E"):
 		if dic.has("NE"):
 			if dic["E"] > dic["NE"]:
@@ -260,7 +270,6 @@ func clean_dic():
 			else:
 				dic.erase("E")
 				dic.erase("SE")
-		
 	elif dic.has("W"):
 		if dic.has("NE"):
 			if dic["W"] > dic["NE"]:
@@ -302,31 +311,49 @@ func clean_dic():
 
 func go_to_nearest():
 	if dic.has("N"):
-		$Inside_area.position = $Positions/North.position
+		if auto_enabled: $Inside_area.position = $Positions/North.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("N is nearest")
 	elif dic.has("S"):
-		$Inside_area.position = $Positions/South.position
+		if auto_enabled: $Inside_area.position = $Positions/South.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("S is nearest")
 	elif dic.has("E"):
-		$Inside_area.position = $Positions/East.position
+		if auto_enabled: $Inside_area.position = $Positions/East.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("E is nearest")
 	elif dic.has("W"):
-		$Inside_area.position = $Positions/West.position
+		if auto_enabled: $Inside_area.position = $Positions/West.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("W is nearest")
 	elif dic.has("NE"):
-		$Inside_area.position = $Positions/NorthEast.position
+		if auto_enabled: $Inside_area.position = $Positions/NorthEast.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("NE is nearest")
 	elif dic.has("NW"):
-		$Inside_area.position = $Positions/NorthWest.position
+		if auto_enabled: $Inside_area.position = $Positions/NorthWest.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("NW is nearest")
 	elif dic.has("SE"):
-		$Inside_area.position = $Positions/SouthEast.position
+		if auto_enabled: $Inside_area.position = $Positions/SouthEast.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("SE is nearest")
 	elif dic.has("SW"):
-		$Inside_area.position = $Positions/SouthWest.position
+		if auto_enabled: $Inside_area.position = $Positions/SouthWest.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("SW is nearest")
 	else:
-		$Inside_area.position = $Positions/Origin.position
+		if auto_enabled: $Inside_area.position = $Positions/Origin.position
+		resultant_axis.clear()
+		resultant_axis = dic.duplicate()
 		print("No point is nearest")
 	
 	dic.clear()
@@ -334,3 +361,4 @@ func go_to_nearest():
 	print("everything happened")
 	
 	pass
+	

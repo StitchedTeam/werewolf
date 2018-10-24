@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Werewolf"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerGlobals="*res://Singletons/PlayerGlobals.gd"
+
 [display]
 
 window/size/width=300
