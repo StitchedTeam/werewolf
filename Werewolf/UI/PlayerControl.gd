@@ -9,14 +9,11 @@ var dic
 func _ready():
 	pass
 
-
 func _process(delta):
-	
-	drag_and_place()
-	
+	drag_and_place()	
 	# To make Input Area's empty collider follow mouse position
 	$Input_area.position = get_global_mouse_position()
-	
+
 	pass
 
 func drag_and_place():
@@ -31,20 +28,14 @@ func drag_and_place():
 			print("Controller drag ended")
 			dragging = false
 			drag_ended = true
-		if $Input_area.overlaps_area($Outside_area):
+		if ($Input_area.overlaps_area($Outside_area) && !drag_ended):
 			$Inside_area.position = $Input_area.position
 	
 	# To bring control to the correct position after drag ended
 	if drag_ended:
 		build_position_dictionary()
-		
-		
-		
-		drag_ended = false
-	
 	pass
 	
-
 # Brings between the control and all eight positions to the dictionary
 func build_position_dictionary():
 	
@@ -166,6 +157,7 @@ func clean_dic():
 			else:
 				dic.erase("SW")
 				dic.erase("SE")
+	
 	
 	if dic.has("N"):
 		if dic.has("NE"):
@@ -302,6 +294,7 @@ func clean_dic():
 			else:
 				dic.erase("W")
 				dic.erase("SE")
+	print(String(dic))
 	
 	go_to_nearest()
 	
@@ -309,24 +302,35 @@ func clean_dic():
 
 func go_to_nearest():
 	if dic.has("N"):
-		$Input_area.position = $Positions/North.position
+		$Inside_area.position = $Positions/North.position
+		print("N is nearest")
 	elif dic.has("S"):
-		$Input_area.position = $Positions/South.position
+		$Inside_area.position = $Positions/South.position
+		print("S is nearest")
 	elif dic.has("E"):
-		$Input_area.position = $Positions/East.position
+		$Inside_area.position = $Positions/East.position
+		print("E is nearest")
 	elif dic.has("W"):
-		$Input_area.position = $Positions/West.position
+		$Inside_area.position = $Positions/West.position
+		print("W is nearest")
 	elif dic.has("NE"):
-		$Input_area.position = $Positions/NorthEast.position
+		$Inside_area.position = $Positions/NorthEast.position
+		print("NE is nearest")
 	elif dic.has("NW"):
-		$Input_area.position = $Positions/NorthWest.position
+		$Inside_area.position = $Positions/NorthWest.position
+		print("NW is nearest")
 	elif dic.has("SE"):
-		$Input_area.position = $Positions/SouthEast.position
+		$Inside_area.position = $Positions/SouthEast.position
+		print("SE is nearest")
 	elif dic.has("SW"):
-		$Input_area.position = $Positions/SouthWest.position
+		$Inside_area.position = $Positions/SouthWest.position
+		print("SW is nearest")
 	else:
-		$Input_area.position = $Positions/Origin.position
+		$Inside_area.position = $Positions/Origin.position
+		print("No point is nearest")
 	
 	dic.clear()
+	drag_ended = false
+	print("everything happened")
 	
 	pass

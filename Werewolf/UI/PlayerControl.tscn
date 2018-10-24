@@ -54,7 +54,6 @@ audio_bus_name = "Master"
 shape = SubResource( 2 )
 
 [node name="Outside_area" type="Area2D" parent="."]
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
