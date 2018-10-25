@@ -2,6 +2,8 @@ extends Node2D
 
 var auto_enabled = false
 
+var first_click = false
+
 var dragging = false
 var drag_ended = false
 
@@ -10,10 +12,13 @@ var dic
 var resultant_axis = Dictionary()
 
 func _ready():
+	$Timer.connect("timeout", self, "timer_end")
+	$TimerDrag.connect("timeout", self, "timer_drag_end")
 	pass
 
 func _process(delta):
 	drag_and_place()
+	enable_auto()
 	# To make Input Area's empty collider follow mouse position
 	$Input_area.position = get_local_mouse_position()
 	pass
@@ -303,7 +308,6 @@ func clean_dic():
 			else:
 				dic.erase("W")
 				dic.erase("SE")
-	print(String(dic))
 	
 	go_to_nearest()
 	
@@ -314,51 +318,61 @@ func go_to_nearest():
 		if auto_enabled: $Inside_area.position = $Positions/North.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("N is nearest")
 	elif dic.has("S"):
 		if auto_enabled: $Inside_area.position = $Positions/South.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("S is nearest")
 	elif dic.has("E"):
 		if auto_enabled: $Inside_area.position = $Positions/East.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("E is nearest")
 	elif dic.has("W"):
 		if auto_enabled: $Inside_area.position = $Positions/West.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("W is nearest")
 	elif dic.has("NE"):
 		if auto_enabled: $Inside_area.position = $Positions/NorthEast.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("NE is nearest")
 	elif dic.has("NW"):
 		if auto_enabled: $Inside_area.position = $Positions/NorthWest.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("NW is nearest")
 	elif dic.has("SE"):
 		if auto_enabled: $Inside_area.position = $Positions/SouthEast.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("SE is nearest")
 	elif dic.has("SW"):
 		if auto_enabled: $Inside_area.position = $Positions/SouthWest.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("SW is nearest")
 	else:
 		if auto_enabled: $Inside_area.position = $Positions/Origin.position
 		resultant_axis.clear()
 		resultant_axis = dic.duplicate()
-		print("No point is nearest")
 	
 	dic.clear()
 	drag_ended = false
-	print("everything happened")
 	
 	pass
 	
+func enable_auto():
+	if (Input.is_action_just_released("click") && $Input_area.overlaps_area($Inside_area)):
+		$Timer.start()
+		$TimerDrag.start()
+		first_click = true
+		print("first click")
+	if first_click:
+		if (Input.is_action_just_pressed("click") && $Input_area.overlaps_area($Inside_area)):
+			print("second click")
+			auto_enabled = !auto_enabled
+			print (String(auto_enabled))
+	pass
+
+func timer_end():
+	print("timeout!")
+	first_click = false
+	pass
+
+func timer_drag_end():
+	pass
