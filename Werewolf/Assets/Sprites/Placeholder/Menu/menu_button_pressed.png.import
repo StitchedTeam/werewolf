@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_control_2.png-c3d9d2150c451734b21c2de9b706329e.stex"
+path="res://.import/menu_button_pressed.png-e7ee0ddf55e60db4e16a91778bb414d7.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Placeholder/ui_control_2.png"
-dest_files=[ "res://.import/ui_control_2.png-c3d9d2150c451734b21c2de9b706329e.stex" ]
+source_file="res://Assets/Sprites/Placeholder/Menu/menu_button_pressed.png"
+dest_files=[ "res://.import/menu_button_pressed.png-e7ee0ddf55e60db4e16a91778bb414d7.stex" ]
 
 [params]
 

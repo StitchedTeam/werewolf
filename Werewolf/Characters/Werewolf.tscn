@@ -1,8 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/Werewolf.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters_001.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Placeholder/wolf.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/Characters_001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/wolf.png" type="Texture" id=3]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 

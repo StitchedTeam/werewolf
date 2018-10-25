@@ -24,8 +24,8 @@ PlayerGlobals="res://Singletons/PlayerGlobals.gd"
 
 [display]
 
-window/size/width=300
-window/size/height=300
+window/size/width=384
+window/size/height=216
 
 [input]
 
