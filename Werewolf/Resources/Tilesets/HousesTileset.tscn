@@ -1,17 +1,48 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/Scenario/houses_v2.png" type="Texture" id=1]
 
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31, 61 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 39 )
+
 [node name="HousesTileset" type="Node"]
+editor/display_folded = true
 
 [node name="Building" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 1 )
 centered = false
 vframes = 5
 hframes = 10
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Building"]
+editor/display_folded = true
+position = Vector2( 32, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/StaticBody2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building12" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -20,7 +51,26 @@ hframes = 10
 frame = 10
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building12"]
+editor/display_folded = true
+position = Vector2( 30, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building12/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building2" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -29,7 +79,25 @@ hframes = 10
 frame = 1
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building2"]
+editor/display_folded = true
+position = Vector2( 29, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building2/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+
 [node name="Building14" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -38,7 +106,26 @@ hframes = 10
 frame = 11
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building14"]
+editor/display_folded = true
+position = Vector2( 27, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building14/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building3" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 200, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -47,7 +134,26 @@ hframes = 10
 frame = 2
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building3"]
+editor/display_folded = true
+position = Vector2( 27, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building3/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building13" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 200, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -56,7 +162,26 @@ hframes = 10
 frame = 12
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building13"]
+editor/display_folded = true
+position = Vector2( 26, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building13/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building4" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -65,7 +190,26 @@ hframes = 10
 frame = 3
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building4"]
+editor/display_folded = true
+position = Vector2( 26, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building4/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building15" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -74,7 +218,26 @@ hframes = 10
 frame = 13
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building15"]
+editor/display_folded = true
+position = Vector2( 27, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building15/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building5" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -83,7 +246,26 @@ hframes = 10
 frame = 4
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building5"]
+editor/display_folded = true
+position = Vector2( 32, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building5/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building16" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -92,7 +274,26 @@ hframes = 10
 frame = 14
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building16"]
+editor/display_folded = true
+position = Vector2( 32, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building16/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building6" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -101,7 +302,26 @@ hframes = 10
 frame = 5
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building6"]
+editor/display_folded = true
+position = Vector2( 28, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building6/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building11" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -110,7 +330,26 @@ hframes = 10
 frame = 15
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building11"]
+editor/display_folded = true
+position = Vector2( 27, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building11/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building21" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -119,7 +358,26 @@ hframes = 10
 frame = 20
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building21"]
+editor/display_folded = true
+position = Vector2( 32, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building21/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building7" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -128,7 +386,26 @@ hframes = 10
 frame = 6
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building7"]
+editor/display_folded = true
+position = Vector2( 25, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building7/Area2D"]
+position = Vector2( 21, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building18" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -137,7 +414,26 @@ hframes = 10
 frame = 16
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building18"]
+editor/display_folded = true
+position = Vector2( 27, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building18/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building23" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 100, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -146,7 +442,25 @@ hframes = 10
 frame = 21
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building23"]
+editor/display_folded = true
+position = Vector2( 28, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building23/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+
 [node name="Building8" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 200, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -155,7 +469,26 @@ hframes = 10
 frame = 7
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building8"]
+editor/display_folded = true
+position = Vector2( 26, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building8/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building20" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 200, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -164,7 +497,26 @@ hframes = 10
 frame = 17
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building20"]
+editor/display_folded = true
+position = Vector2( 25, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building20/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building22" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 200, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -173,7 +525,26 @@ hframes = 10
 frame = 22
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building22"]
+editor/display_folded = true
+position = Vector2( 27, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building22/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building9" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -182,7 +553,26 @@ hframes = 10
 frame = 8
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building9"]
+editor/display_folded = true
+position = Vector2( 27, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building9/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building17" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -191,7 +581,26 @@ hframes = 10
 frame = 18
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building17"]
+editor/display_folded = true
+position = Vector2( 26, 56 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building17/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building25" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -200,7 +609,26 @@ hframes = 10
 frame = 23
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building25"]
+editor/display_folded = true
+position = Vector2( 26, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building25/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building10" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -209,7 +637,26 @@ hframes = 10
 frame = 9
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building10"]
+editor/display_folded = true
+position = Vector2( 31, 33 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building10/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building19" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -218,7 +665,26 @@ hframes = 10
 frame = 19
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
 
+[node name="Area2D" type="StaticBody2D" parent="Building19"]
+editor/display_folded = true
+position = Vector2( 30, 57 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building19/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
 [node name="Building24" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 400, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -226,4 +692,22 @@ vframes = 5
 hframes = 10
 frame = 24
 _sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="Area2D" type="StaticBody2D" parent="Building24"]
+editor/display_folded = true
+position = Vector2( 32, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building24/Area2D"]
+position = Vector2( 20, 50 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
 
