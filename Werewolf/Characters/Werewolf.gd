@@ -25,16 +25,32 @@ func manage_animation():
 			$AnimationPlayer.play("HumanRight")
 		elif horax == -1:
 			$AnimationPlayer.play("HumanLeft")
+		elif vertax == 1:
+			$AnimationPlayer.play("HumanDown")
+		elif vertax == -1:
+			$AnimationPlayer.play("HumanUp")
 		else:
 			$AnimationPlayer.play("HumanIdle")
-	
+	else:
+		if horax == 1:
+			$AnimationPlayer.play("WolfRight")
+		elif horax == -1:
+			$AnimationPlayer.play("WolfLeft")
+		else:
+			$AnimationPlayer.play("WolfIdle")
 	pass
 
 func switch_human():
 	if human:
-		print("Switching to wolf")
+		human = false
+		manage_animation()
+		$HumanCollider.disabled = true
+		$WolfCollider.disabled = false
 	else:
-		print("Switching to human")
+		human = true
+		manage_animation()
+		$HumanCollider.disabled = false
+		$WolfCollider.disabled = true
 	pass
 
 func set_axis(var new_axis):

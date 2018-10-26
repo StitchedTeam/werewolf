@@ -8,6 +8,7 @@ func _ready():
 
 func _process(delta):
 	find_direction_axis()
+	debug_wolf_mode()
 	pass
 
 func find_direction_axis():
@@ -35,4 +36,9 @@ func find_direction_axis():
 	else:
 		$Werewolf.speed = 20
 	
+	pass
+
+func debug_wolf_mode():
+	if Input.is_action_just_pressed("ui_select"):
+		$Werewolf.switch_human()
 	pass
