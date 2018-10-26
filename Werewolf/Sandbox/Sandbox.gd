@@ -1,5 +1,7 @@
 extends Node
 
+var current_axis = 0
+var last_changed_axis = 0
 
 func _ready():
 	pass 
@@ -10,32 +12,23 @@ func _process(delta):
 
 func find_direction_axis():
 	if $PlayerControl.resultant_axis.has("1"):
-		$Werewolf.horax = 0
-		$Werewolf.vertax = -1
+		$Werewolf.set_axis(1)
 	elif $PlayerControl.resultant_axis.has("2"):
-		$Werewolf.horax = 0
-		$Werewolf.vertax = 1
+		$Werewolf.set_axis(2)
 	elif $PlayerControl.resultant_axis.has("3"):
-		$Werewolf.horax = 1
-		$Werewolf.vertax = 0
+		$Werewolf.set_axis(3)
 	elif $PlayerControl.resultant_axis.has("4"):
-		$Werewolf.horax = -1
-		$Werewolf.vertax = 0
+		$Werewolf.set_axis(4)
 	elif $PlayerControl.resultant_axis.has("5"):
-		$Werewolf.horax = 1
-		$Werewolf.vertax = -1
+		$Werewolf.set_axis(5)
 	elif $PlayerControl.resultant_axis.has("6"):
-		$Werewolf.horax = -1
-		$Werewolf.vertax = -1
+		$Werewolf.set_axis(6)
 	elif $PlayerControl.resultant_axis.has("7"):
-		$Werewolf.horax = 1
-		$Werewolf.vertax = 1
+		$Werewolf.set_axis(7)
 	elif $PlayerControl.resultant_axis.has("8"):
-		$Werewolf.horax = -1
-		$Werewolf.vertax = 1
+		$Werewolf.set_axis(8)
 	else:
-		$Werewolf.horax = 0
-		$Werewolf.vertax = 0
+		$Werewolf.set_axis(0)
 	
 	if $PlayerControl.auto_enabled:
 		$Werewolf.speed = 5
