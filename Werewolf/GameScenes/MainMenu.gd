@@ -19,11 +19,18 @@ func buttons_check():
 	
 	if $Panel/StartButtons/Options.is_pressed():
 		$Panel/StartButtons.visible = false
-		$ClickCount.start()
+		$Panel/Options.visible = true
+		$Panel/Back.visible = true
 	
 	if $Panel/StartButtons/About.is_pressed():
 		$Panel/StartButtons.visible = false
-		$ClickCount.start()
+		$Panel/Back.visible = true
+	
+	if $Panel/Back.is_pressed():
+		$Panel/StartButtons.visible = true
+		$Panel/Options.visible = false
+		$Panel/About.visible = false
+		$Panel/Back.visible = false
 	
 	if Input.is_action_just_pressed("click") && !initial_buttons_enabled && !$Panel/NewGameCheck/NewGame.is_pressed() && !$Panel/NewGameCheck/Continue.is_pressed():
 		initial_buttons_enabled = true
