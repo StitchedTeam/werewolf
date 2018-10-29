@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Sprites/Placeholder/UI/ui_control_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Placeholder/UI/ui_control_2.png" type="Texture" id=3]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -30,7 +29,6 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Grow Direction" ]
 
 [node name="Center_area" type="Area2D" parent="."]
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -40,10 +38,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Center_area"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Input_area" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 211.953, 6.58611 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -54,10 +52,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Input_area"]
+visible = false
 shape = SubResource( 2 )
 
 [node name="Outside_area" type="Area2D" parent="."]
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -67,13 +65,13 @@ audio_bus_override = false
 audio_bus_name = "Master"
 
 [node name="Outside_collider" type="CollisionShape2D" parent="Outside_area"]
+visible = false
 shape = SubResource( 3 )
 
 [node name="Outside_sprite" type="Sprite" parent="Outside_area"]
 texture = ExtResource( 2 )
 
 [node name="Inside_area" type="Area2D" parent="."]
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -83,6 +81,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 
 [node name="Inside_collider" type="CollisionShape2D" parent="Inside_area"]
+visible = false
 shape = SubResource( 4 )
 
 [node name="Inside_sprite" type="Sprite" parent="Inside_area"]

@@ -16,6 +16,7 @@ func _ready():
 func _physics_process(delta):
 	
 	move_and_slide(Vector2 (speed * horax, speed * vertax))
+	find_direction_axis()
 	
 	pass
 
@@ -103,6 +104,31 @@ func set_axis(var new_axis):
 		
 	pass
 
+func find_direction_axis():
+	if $Camera2D/UI/PlayerControl.resultant_axis.has("1"):
+		set_axis(1)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("2"):
+		set_axis(2)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("3"):
+		set_axis(3)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("4"):
+		set_axis(4)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("5"):
+		set_axis(5)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("6"):
+		set_axis(6)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("7"):
+		set_axis(7)
+	elif $Camera2D/UI/PlayerControl.resultant_axis.has("8"):
+		set_axis(8)
+	else:
+		set_axis(0)
+	
+	if $Camera2D/UI/PlayerControl.auto_enabled:
+		speed = 5
+	else:
+		speed = 20
+	pass
 
 
 
