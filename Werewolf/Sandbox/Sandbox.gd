@@ -9,6 +9,7 @@ func _ready():
 func _process(delta):
 	find_direction_axis()
 	debug_wolf_mode()
+	debug_lighting()
 	pass
 
 func find_direction_axis():
@@ -41,4 +42,12 @@ func find_direction_axis():
 func debug_wolf_mode():
 	if Input.is_action_just_pressed("ui_select"):
 		$Werewolf.switch_human()
+	pass
+
+func debug_lighting():
+	if Input.is_action_pressed("ui_right"):
+		$Light2D.position.x += 1
+	elif Input.is_action_pressed("ui_left"):
+		$Light2D.position.x -= 1
+	
 	pass
