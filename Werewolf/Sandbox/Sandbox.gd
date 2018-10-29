@@ -1,14 +1,12 @@
 extends Node
 
-var current_axis = 0
-var last_changed_axis = 0
-
 func _ready():
 	pass 
 
 func _process(delta):
 	debug_wolf_mode()
 	debug_lighting()
+	debug_raycasting()
 	pass
 
 func debug_wolf_mode():
@@ -18,8 +16,12 @@ func debug_wolf_mode():
 
 func debug_lighting():
 	if Input.is_action_pressed("ui_right"):
-		$Light2D.position.x += 1
+		$Moonlight.position.x += 1
 	elif Input.is_action_pressed("ui_left"):
-		$Light2D.position.x -= 1
-	
+		$Moonlight.position.x -= 1
+	pass
+
+func debug_raycasting():
+	#if $Moonlight.check_if_object($Werewolf):
+	#	print()
 	pass

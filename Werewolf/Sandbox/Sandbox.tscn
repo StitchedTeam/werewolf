@@ -30,5 +30,5 @@ anims/LightCycle = SubResource( 3 )
 blend_times = [  ]
 
 [node name="Moonlight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 45, -161 )
+position = Vector2( -35, -146 )
 
