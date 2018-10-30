@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Sprites/Placeholder/bg.png" type="Texture" id=1]
-[ext_resource path="res://Resources/Tilesets/houses_v2.tres" type="TileSet" id=2]
+[ext_resource path="res://Resources/Tilesets/houses_v4.tres" type="TileSet" id=2]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -30, 54, -30, -37, 29, -37, 29, 54 )
+polygon = PoolVector2Array( -30, 54, -30, -68, 29, -68, 29, 54 )
 _sections_unfolded = [ "polygon" ]
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
 cull_mode = 0
-polygon = PoolVector2Array( -32, 27, -32, -21, 28, -21, 28, 28 )
+polygon = PoolVector2Array( -32, 27, -32, -52, 28, -52, 28, 28 )
 _sections_unfolded = [ "polygon" ]
 
 [node name="Scenario" type="Node2D"]
@@ -43,14 +43,13 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -262134, 23, 0, -196604, 21, 0, -65537, 0, 0, -131066, 5, 0, -65535, 18, 0, -65526, 3, 0, 327679, 19, 0, 262147, 17, 0, 262150, 23, 0, 262153, 15, 0, 327681, 13, 0, 327690, 0, 0 )
+tile_data = PoolIntArray( -262134, 1, 0, -196604, 21, 0, -65537, 6, 0, -131066, 17, 0, -65535, 18, 0, -65526, 7, 0, 327679, 10, 0, 262147, 7, 0, 262150, 9, 0, 262153, 16, 0, 327681, 2, 0, 327690, 18, 0 )
 _sections_unfolded = [ "Cell", "Collision", "tile_set" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="LightOccluding" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="TwoPavement" type="Node2D" parent="LightOccluding"]
 editor/display_folded = true
@@ -98,7 +97,6 @@ light_mask = 1
 _sections_unfolded = [ "occluder" ]
 
 [node name="OnePavement" type="Node2D" parent="LightOccluding"]
-editor/display_folded = true
 
 [node name="OnePavement" type="LightOccluder2D" parent="LightOccluding/OnePavement"]
 position = Vector2( 370, 86 )

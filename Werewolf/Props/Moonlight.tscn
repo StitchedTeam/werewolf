@@ -43,6 +43,7 @@ __meta__ = {
 }
 
 [node name="RaycastsR" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="RayCast2D" type="RayCast2D" parent="RaycastsR"]
 enabled = true

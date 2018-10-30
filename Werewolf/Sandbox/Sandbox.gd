@@ -7,6 +7,7 @@ func _process(delta):
 	debug_wolf_mode()
 	debug_lighting()
 	debug_raycasting()
+	walklight()
 	pass
 
 func debug_wolf_mode():
@@ -23,5 +24,10 @@ func debug_lighting():
 
 func debug_raycasting():
 	if $Moonlight.check_if_object($Werewolf):
-		print("t")
+		$Moonlight.detect_enabled = false
+		$Werewolf.switch_human()
+	pass
+
+func walklight():
+	$Moonlight.position.y = $Werewolf.position.y - 300
 	pass
