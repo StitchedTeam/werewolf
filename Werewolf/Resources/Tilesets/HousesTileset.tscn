@@ -1,22 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Sprites/Scenario/houses_v2.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31, 61 )
+extents = Vector2( 30, 46 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 39 )
+extents = Vector2( 30, 15 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 24 )
 
 [node name="HousesTileset" type="Node"]
-editor/display_folded = true
 
 [node name="Building" type="Sprite" parent="."]
-editor/display_folded = true
 texture = ExtResource( 1 )
 centered = false
 vframes = 5
@@ -35,14 +38,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building/StaticBody2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building12" type="Sprite" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Building"]
 editor/display_folded = true
+position = Vector2( 52, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/StaticBody2D2"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building12" type="Sprite" parent="."]
 position = Vector2( 0, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -63,14 +88,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building12/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Building12"]
+editor/display_folded = true
+position = Vector2( 51, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building12/StaticBody2D3"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building2" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 100, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -91,13 +138,35 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building2/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 
-[node name="Building14" type="Sprite" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Building2"]
 editor/display_folded = true
+position = Vector2( 49, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building2/StaticBody2D3"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building14" type="Sprite" parent="."]
 position = Vector2( 100, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -118,14 +187,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building14/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 21, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Building14"]
+editor/display_folded = true
+position = Vector2( 49, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building14/StaticBody2D4"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building3" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 200, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -146,14 +237,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building3/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building13" type="Sprite" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Building3"]
 editor/display_folded = true
+position = Vector2( 47, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building3/StaticBody2D4"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building13" type="Sprite" parent="."]
 position = Vector2( 200, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -174,14 +287,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building13/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 66 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Building13"]
+editor/display_folded = true
+position = Vector2( 47, 83 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building13/StaticBody2D5"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building4" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 300, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -202,14 +337,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building4/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building15" type="Sprite" parent="."]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Building4"]
 editor/display_folded = true
+position = Vector2( 47, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building4/StaticBody2D5"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building15" type="Sprite" parent="."]
 position = Vector2( 300, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -217,6 +374,26 @@ vframes = 5
 hframes = 10
 frame = 13
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Building15"]
+editor/display_folded = true
+position = Vector2( 48, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building15/StaticBody2D6"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
 
 [node name="Area2D" type="StaticBody2D" parent="Building15"]
 editor/display_folded = true
@@ -230,14 +407,16 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building15/Area2D"]
-position = Vector2( 20, 50 )
-shape = SubResource( 2 )
+position = Vector2( 20, 65 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building5" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 400, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -245,6 +424,26 @@ vframes = 5
 hframes = 10
 frame = 4
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Building5"]
+editor/display_folded = true
+position = Vector2( 53, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building5/StaticBody2D6"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
 
 [node name="Area2D" type="StaticBody2D" parent="Building5"]
 editor/display_folded = true
@@ -258,14 +457,16 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building5/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building16" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 400, 300 )
 texture = ExtResource( 1 )
 centered = false
@@ -286,14 +487,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building16/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Building16"]
+editor/display_folded = true
+position = Vector2( 53, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building16/StaticBody2D7"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building6" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -314,14 +537,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building6/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 64 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building11" type="Sprite" parent="."]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Building6"]
 editor/display_folded = true
+position = Vector2( 48, 36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building6/StaticBody2D7"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building11" type="Sprite" parent="."]
 position = Vector2( 0, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -342,14 +587,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building11/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Building11"]
+editor/display_folded = true
+position = Vector2( 48, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building11/StaticBody2D8"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building21" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -357,6 +624,26 @@ vframes = 5
 hframes = 10
 frame = 20
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Building21"]
+editor/display_folded = true
+position = Vector2( 52, 40 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building21/StaticBody2D8"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
 
 [node name="Area2D" type="StaticBody2D" parent="Building21"]
 editor/display_folded = true
@@ -370,14 +657,16 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building21/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building7" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 100, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -398,14 +687,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building7/Area2D"]
-position = Vector2( 21, 50 )
+position = Vector2( 21, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building18" type="Sprite" parent="."]
+[node name="StaticBody2D9" type="StaticBody2D" parent="Building7"]
 editor/display_folded = true
+position = Vector2( 47, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building7/StaticBody2D9"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building18" type="Sprite" parent="."]
 position = Vector2( 100, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -426,14 +737,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building18/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Building18"]
+editor/display_folded = true
+position = Vector2( 47, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building18/StaticBody2D10"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building23" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 100, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -454,13 +787,35 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building23/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
 
-[node name="Building8" type="Sprite" parent="."]
+[node name="StaticBody2D11" type="StaticBody2D" parent="Building23"]
 editor/display_folded = true
+position = Vector2( 49, 40 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building23/StaticBody2D11"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building8" type="Sprite" parent="."]
 position = Vector2( 200, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -481,14 +836,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building8/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building20" type="Sprite" parent="."]
+[node name="StaticBody2D12" type="StaticBody2D" parent="Building8"]
 editor/display_folded = true
+position = Vector2( 46, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building8/StaticBody2D12"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building20" type="Sprite" parent="."]
 position = Vector2( 200, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -509,14 +886,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building20/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Building20"]
+editor/display_folded = true
+position = Vector2( 46, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building20/StaticBody2D13"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building22" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 200, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -537,14 +936,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building22/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building9" type="Sprite" parent="."]
+[node name="StaticBody2D14" type="StaticBody2D" parent="Building22"]
 editor/display_folded = true
+position = Vector2( 47, 40 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building22/StaticBody2D14"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building9" type="Sprite" parent="."]
 position = Vector2( 300, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -565,14 +986,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building9/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building17" type="Sprite" parent="."]
+[node name="StaticBody2D15" type="StaticBody2D" parent="Building9"]
 editor/display_folded = true
+position = Vector2( 47, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building9/StaticBody2D15"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building17" type="Sprite" parent="."]
 position = Vector2( 300, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -593,14 +1036,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building17/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 19, 65 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Building17"]
+editor/display_folded = true
+position = Vector2( 46, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building17/StaticBody2D16"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building25" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 300, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -621,14 +1086,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building25/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building10" type="Sprite" parent="."]
+[node name="StaticBody2D17" type="StaticBody2D" parent="Building25"]
 editor/display_folded = true
+position = Vector2( 47, 40 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building25/StaticBody2D17"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building10" type="Sprite" parent="."]
 position = Vector2( 400, 150 )
 texture = ExtResource( 1 )
 centered = false
@@ -649,14 +1136,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building10/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "shape" ]
 
-[node name="Building19" type="Sprite" parent="."]
+[node name="StaticBody2D16" type="StaticBody2D" parent="Building10"]
 editor/display_folded = true
+position = Vector2( 52, 37 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building10/StaticBody2D16"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Building19" type="Sprite" parent="."]
 position = Vector2( 400, 450 )
 texture = ExtResource( 1 )
 centered = false
@@ -677,14 +1186,36 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building19/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 21, 64 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Building19"]
+editor/display_folded = true
+position = Vector2( 52, 82 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building19/StaticBody2D17"]
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 
 [node name="Building24" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 400, 600 )
 texture = ExtResource( 1 )
 centered = false
@@ -705,9 +1236,32 @@ friction = 1.0
 bounce = 0.0
 physics_material_override = null
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building24/Area2D"]
-position = Vector2( 20, 50 )
+position = Vector2( 20, 65 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Building24"]
+editor/display_folded = true
+position = Vector2( 53, 40 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building24/StaticBody2D18"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "shape" ]
 

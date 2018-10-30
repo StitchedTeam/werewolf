@@ -22,6 +22,6 @@ func debug_lighting():
 	pass
 
 func debug_raycasting():
-	#if $Moonlight.check_if_object($Werewolf):
-	#	print()
+	if $Moonlight.check_if_object($Werewolf):
+		print("t")
 	pass
