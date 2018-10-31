@@ -3,6 +3,7 @@ extends Node
 var dir = 1
 
 func _ready():
+	$GenericEnemy.patrol($Werewolf)
 	pass 
 
 func _process(delta):
