@@ -34,5 +34,6 @@ blend_times = [  ]
 position = Vector2( 246, -217 )
 
 [node name="GenericEnemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 151, 104 )
+position = Vector2( 211, 172 )
+character_spritesheet = 1
 
