@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Node2D
 
 var start_pos
 var min_x
@@ -7,16 +7,22 @@ var max_x
 var dir = 1
 var anim = 0
 
+var state = 0
+var player
+var turn_around_enabled = true
+
 export var patrol_offset = int()
 
 func _ready():
 	start_pos = position
 	max_x = start_pos.x + patrol_offset
 	min_x = start_pos.x - patrol_offset
+	$Timer.connect("timeout", self, "turn_around_timer")
 	pass
 
 func _process(delta):
 	manage_animation()
+	manage_state()
 	pass
 
 func manage_animation():
@@ -30,31 +36,55 @@ func manage_animation():
 			anim = -1
 	pass
 
-func patrol(player):
+func manage_state():
+	if state == 0:
+		patrol()
+	elif state == 1:
+		run()
+	pass
+
+func patrol():
 	
 	if dir == 1:
 		if position.x < max_x:
-			move_and_slide(Vector2(0.1, 0))
+			position.x += 0.2
 		elif position.x >= max_x:
-			dir = -1
-		elif get_slide_collision(0) != null:
 			dir = -1
 	elif dir == -1:
 		if position.x > min_x:
-			move_and_slide(Vector2(-0.1, 0))
+			position.x -= 0.2
 		elif position.x <= min_x:
 			dir = 1
-		elif get_slide_collision(0) != null:
-			dir = 1
 	
-	if $RayCast2DLeft.get_collider() == player && player.human == false:
-		run(player)
-	elif $RayCast2DRight.get_collider() == player && player.human == false:
-		run(player)
-	else:
-		patrol(player)
+	if $RayCast2DCollUp.is_colliding():
+		if turn_around_enabled:
+			if dir == 1:
+				dir = -1
+				turn_around_enabled = false
+				$Timer.start()
+			elif dir == -1:
+				dir = 1
+				turn_around_enabled = false
+				$Timer.start()
 	
+	if $RayCast2DCollDown.is_colliding():
+		if turn_around_enabled:
+			if dir == 1:
+				dir = -1
+				turn_around_enabled = false
+				$Timer.start()
+			elif dir == -1:
+				dir = 1
+				turn_around_enabled = false
+				$Timer.start()
+	
+	if $RayCast2DSight.get_collider() == player:
+		state = 1
 	pass
 
-func run(player):
+func turn_around_timer():
+	turn_around_enabled = true
+	pass
+
+func run():
 	pass

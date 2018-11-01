@@ -34,5 +34,5 @@ blend_times = [  ]
 position = Vector2( 246, -217 )
 
 [node name="GenericEnemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 124.228, 65.3061 )
+position = Vector2( 151, 104 )
 
