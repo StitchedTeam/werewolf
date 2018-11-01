@@ -4,12 +4,15 @@ var start_pos
 var min_x
 var max_x
 
-var dir = 1
+var dir_x = 1
+var dir_y = -1
 var anim = 0
+var dir_y_setted = false
 
 var state = 0
 var player
 var turn_around_enabled = true
+var vertical_move_enabled = false
 
 export var patrol_offset = int()
 export var character_spritesheet = int()
@@ -29,11 +32,11 @@ func _process(delta):
 	pass
 
 func manage_animation():
-	if dir == 1:
+	if dir_x == 1:
 		if anim != 1:
 			$AnimationPlayer.play("Right")
 			anim = 1
-	elif dir == -1:
+	elif dir_x == -1:
 		if anim != -1:
 			$AnimationPlayer.play("Left")
 			anim = -1
@@ -55,36 +58,36 @@ func manage_state():
 
 func patrol():
 	
-	if dir == 1:
+	if dir_x == 1:
 		if position.x < max_x:
 			position.x += 0.2
 		elif position.x >= max_x:
-			dir = -1
-	elif dir == -1:
+			dir_x = -1
+	elif dir_x == -1:
 		if position.x > min_x:
 			position.x -= 0.2
 		elif position.x <= min_x:
-			dir = 1
+			dir_x = 1
 	
 	if $RayCast2DCollUp.is_colliding():
 		if turn_around_enabled:
-			if dir == 1:
-				dir = -1
+			if dir_x == 1:
+				dir_x = -1
 				turn_around_enabled = false
 				$Timer.start()
-			elif dir == -1:
-				dir = 1
+			elif dir_x == -1:
+				dir_x = 1
 				turn_around_enabled = false
 				$Timer.start()
 	
 	if $RayCast2DCollDown.is_colliding():
 		if turn_around_enabled:
-			if dir == 1:
-				dir = -1
+			if dir_x == 1:
+				dir_x = -1
 				turn_around_enabled = false
 				$Timer.start()
-			elif dir == -1:
-				dir = 1
+			elif dir_x == -1:
+				dir_x = 1
 				turn_around_enabled = false
 				$Timer.start()
 	
@@ -100,13 +103,43 @@ func turn_around_timer():
 	pass
 
 func run():
-	if player.position.x > position.x:
-		dir = -1
-	elif player.position.x < position.x:
-		dir = 1
 	
-	if dir == 1:
+	$RayCast2DRunUp.set_enabled(true)
+	$RayCast2DRunDown.set_enabled(true)
+	
+	if player.position.x > position.x:
+		dir_x = -1
+	elif player.position.x < position.x:
+		dir_x = 1
+	
+	if !vertical_move_enabled:
+		if dir_x == 1:
 			position.x += 0.2
-	elif dir == -1:
-		position.x -= 0.2
+		elif dir_x == -1:
+			position.x -= 0.2
+	elif vertical_move_enabled:
+		if !dir_y_setted:
+			dir_y = pow(-1, int(rand_range(0, 3)))
+		else:
+			if dir_y == 1:
+				position.y += 0.2
+			elif dir_y == -1:
+				position.y -= 0.2
+	
+	
+	if $RayCast2DCollUp.is_colliding():
+		vertical_move_enabled = true
+	
+	if $RayCast2DCollDown.is_colliding():
+		vertical_move_enabled = true
+	
+	if !$RayCast2DCollUp.is_colliding() && !$RayCast2DCollDown.is_colliding():
+		vertical_move_enabled = false
+	
 	pass
+
+
+
+
+
+
