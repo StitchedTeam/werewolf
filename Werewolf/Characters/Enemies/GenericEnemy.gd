@@ -18,6 +18,8 @@ export var patrol_offset = int()
 export var character_spritesheet = int()
 export var run_state_offset = int()
 
+var attack_not_connected = true
+
 func _ready():
 	start_pos = position
 	max_x = start_pos.x + patrol_offset
@@ -28,6 +30,13 @@ func _ready():
 	pass
 
 func _process(delta):
+	
+	if attack_not_connected:
+		if player != null:
+			print("CCC")
+			player.connect("attack", self, "on_player_attack")
+			attack_not_connected = false
+	
 	manage_animation()
 	manage_state()
 	pass
@@ -140,4 +149,8 @@ func run():
 	
 	if position.distance_to(player.position) >= run_state_offset:
 		state = 0
+	pass
+
+func on_player_attack():
+	print("AAAAAAAAA")
 	pass

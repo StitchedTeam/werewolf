@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/Sprites/Placeholder/Characters/wolf.png" type="Texture" id=3]
 [ext_resource path="res://UI/PlayerControl.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -520,7 +519,6 @@ texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 48
-_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="WolfSpritesheet" type="Sprite" parent="."]
 visible = false
@@ -529,17 +527,14 @@ flip_h = true
 vframes = 6
 hframes = 9
 frame = 32
-_sections_unfolded = [ "Animation", "Offset", "Region", "Visibility" ]
 
 [node name="HumanCollider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility" ]
 
 [node name="WolfCollider" type="CollisionShape2D" parent="."]
 position = Vector2( -3.25447, 5.00688 )
 rotation = 1.5708
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
@@ -586,10 +581,8 @@ editor_draw_drag_margin = false
 
 [node name="UI" type="Node2D" parent="Camera2D"]
 z_index = 1
-_sections_unfolded = [ "Z Index" ]
 
 [node name="PlayerControl" parent="Camera2D/UI" instance=ExtResource( 4 )]
 position = Vector2( 120, 40 )
 z_index = 1
-_sections_unfolded = [ "Grow Direction", "Z Index" ]
 

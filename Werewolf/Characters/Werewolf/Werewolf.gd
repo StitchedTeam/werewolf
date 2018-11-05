@@ -9,6 +9,8 @@ var axis = 0
 
 var speed = 5
 
+signal attack
+
 func _ready():
 	$WolfCollider.disabled = true
 	pass
@@ -17,6 +19,9 @@ func _physics_process(delta):
 	
 	move_and_slide(Vector2 (speed * horax, speed * vertax))
 	find_direction_axis()
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		attack()
 	
 	pass
 
@@ -130,6 +135,9 @@ func find_direction_axis():
 		speed = 20
 	pass
 
+func attack():
+	emit_signal("attack")
+	pass
 
 
 
