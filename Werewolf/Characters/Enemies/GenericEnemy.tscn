@@ -193,6 +193,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( -50, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DCollUp" type="RayCast2D" parent="."]
 position = Vector2( 0, 13.315 )
@@ -200,6 +202,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( -5, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DCollDown" type="RayCast2D" parent="."]
 position = Vector2( 0, -14.685 )
@@ -207,6 +211,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( -5, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DRunUp" type="RayCast2D" parent="."]
 position = Vector2( 0, -12 )
@@ -214,6 +220,8 @@ enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, -3 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DRunDown" type="RayCast2D" parent="."]
 position = Vector2( 0, 11 )
@@ -221,7 +229,8 @@ enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, 3 )
 collision_mask = 1
-_sections_unfolded = [ "Pause" ]
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
@@ -259,5 +268,4 @@ texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "process_material" ]
 
