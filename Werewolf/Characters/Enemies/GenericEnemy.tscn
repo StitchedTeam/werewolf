@@ -180,6 +180,7 @@ anim_loop = false
 script = ExtResource( 1 )
 patrol_offset = 50
 character_spritesheet = 0
+run_state_offset = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -252,7 +253,7 @@ autostart = false
 position = Vector2( 0, -18 )
 emitting = false
 amount = 3
-lifetime = 1.0
+lifetime = 2.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 1.0

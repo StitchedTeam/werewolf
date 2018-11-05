@@ -4,6 +4,9 @@ var dir = 1
 
 func _ready():
 	$GenericEnemy.player = $Werewolf
+	$GenericEnemy2.player = $Werewolf
+	$GenericEnemy3.player = $Werewolf
+	$GenericEnemy4.player = $Werewolf
 	pass 
 
 func _process(delta):

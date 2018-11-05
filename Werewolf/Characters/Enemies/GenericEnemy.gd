@@ -16,6 +16,7 @@ var vertical_move_enabled = false
 
 export var patrol_offset = int()
 export var character_spritesheet = int()
+export var run_state_offset = int()
 
 func _ready():
 	start_pos = position
@@ -120,6 +121,7 @@ func run():
 	elif vertical_move_enabled:
 		if !dir_y_setted:
 			dir_y = pow(-1, int(rand_range(0, 3)))
+			dir_y_setted = true
 		else:
 			if dir_y == 1:
 				position.y += 0.2
@@ -136,10 +138,6 @@ func run():
 	if !$RayCast2DCollUp.is_colliding() && !$RayCast2DCollDown.is_colliding():
 		vertical_move_enabled = false
 	
+	if position.distance_to(player.position) >= run_state_offset:
+		state = 0
 	pass
-
-
-
-
-
-
