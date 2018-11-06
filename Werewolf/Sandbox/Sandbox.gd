@@ -3,10 +3,10 @@ extends Node
 var dir = 1
 
 func _ready():
-	$GenericEnemy.player = $Werewolf
-	$GenericEnemy2.player = $Werewolf
-	$GenericEnemy3.player = $Werewolf
-	$GenericEnemy4.player = $Werewolf
+	$Enemies/GenericEnemy.player = $Werewolf
+	$Enemies/GenericEnemy2.player = $Werewolf
+	$Enemies/GenericEnemy3.player = $Werewolf
+	$Enemies/GenericEnemy4.player = $Werewolf
 	pass 
 
 func _process(delta):

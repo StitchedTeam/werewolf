@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var human = true
 
+var enemy
+
 var horax = 0
 var vertax = 0
 
@@ -9,10 +11,9 @@ var axis = 0
 
 var speed = 5
 
-signal attack
-
 func _ready():
 	$WolfCollider.disabled = true
+	$AttackTimer.connect("timeout", self, "on_attack_end")
 	pass
 
 func _physics_process(delta):
@@ -20,7 +21,7 @@ func _physics_process(delta):
 	move_and_slide(Vector2 (speed * horax, speed * vertax))
 	find_direction_axis()
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("fire"):
 		attack()
 	
 	pass
@@ -136,9 +137,10 @@ func find_direction_axis():
 	pass
 
 func attack():
-	emit_signal("attack")
+	if !human:
+		enemy = $RayCast2D.get_collider().get_instance_id()
+		print(enemy)
 	pass
-
 
 
 

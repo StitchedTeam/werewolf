@@ -33,20 +33,23 @@ blend_times = [  ]
 [node name="Moonlight" parent="." instance=ExtResource( 4 )]
 position = Vector2( 246, -217 )
 
-[node name="GenericEnemy" parent="." instance=ExtResource( 5 )]
+[node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="GenericEnemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 211, 172 )
 character_spritesheet = 1
 run_state_offset = 400
 
-[node name="GenericEnemy2" parent="." instance=ExtResource( 5 )]
+[node name="GenericEnemy2" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 194.219, 72.7354 )
 run_state_offset = 400
 
-[node name="GenericEnemy3" parent="." instance=ExtResource( 5 )]
+[node name="GenericEnemy3" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 129.221, 116.841 )
 run_state_offset = 400
 
-[node name="GenericEnemy4" parent="." instance=ExtResource( 5 )]
+[node name="GenericEnemy4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 311.834, 106.782 )
 character_spritesheet = 1
 run_state_offset = 400

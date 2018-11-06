@@ -18,7 +18,6 @@ export var patrol_offset = int()
 export var character_spritesheet = int()
 export var run_state_offset = int()
 
-var attack_not_connected = true
 
 func _ready():
 	start_pos = position
@@ -31,14 +30,10 @@ func _ready():
 
 func _process(delta):
 	
-	if attack_not_connected:
-		if player != null:
-			print("CCC")
-			player.connect("attack", self, "on_player_attack")
-			attack_not_connected = false
-	
 	manage_animation()
 	manage_state()
+	damage()
+	
 	pass
 
 func manage_animation():
@@ -151,6 +146,8 @@ func run():
 		state = 0
 	pass
 
-func on_player_attack():
-	print("AAAAAAAAA")
+func damage():
+
+	if player.enemy == $StaticBody2D.get_instance_id():
+		get_tree().queue_delete(self)
 	pass
