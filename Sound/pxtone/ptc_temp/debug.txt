@@ -1,0 +1,231 @@
+20181106
+,112842,version 914.
+,112842,if_Player_StopPlay();
+,112842,LoadProject_InitializeTool( ready work ok )
+,112855,if_Player_StartPlay();
+,112855,Streaming_Tune_Start();
+,112855,sampleTune_Start( 0 );
+,112855,sampleTune_Start( true );
+,112855,if_Player_StopPlay();
+,113345,if_Player_StartPlay();
+,113345,Streaming_Tune_Start();
+,113345,sampleTune_Start( 0 );
+,113345,sampleTune_Start( true );
+,113357,if_Player_StartPlay();
+,113357,Streaming_Tune_Start();
+,113357,sampleTune_Start( 0 );
+,113357,sampleTune_Start( true );
+,113404,if_Player_StartPlay();
+,113404,Streaming_Tune_Start();
+,113404,sampleTune_Start( 0 );
+,113404,sampleTune_Start( true );
+,113410,if_Player_StartPlay();
+,113410,Streaming_Tune_Start();
+,113410,sampleTune_Start( 0 );
+,113410,sampleTune_Start( true );
+,113417,if_Player_StartPlay();
+,113417,Streaming_Tune_Start();
+,113417,sampleTune_Start( 0 );
+,113417,sampleTune_Start( true );
+,113424,if_Player_StartPlay();
+,113424,Streaming_Tune_Start();
+,113424,sampleTune_Start( 0 );
+,113424,sampleTune_Start( true );
+,113429,if_Player_StartPlay();
+,113429,Streaming_Tune_Start();
+,113429,sampleTune_Start( 0 );
+,113429,sampleTune_Start( true );
+,113443,if_Player_StartPlay();
+,113443,Streaming_Tune_Start();
+,113443,sampleTune_Start( 0 );
+,113443,sampleTune_Start( true );
+,113530,if_Player_StartPlay();
+,113530,Streaming_Tune_Start();
+,113530,sampleTune_Start( 0 );
+,113530,sampleTune_Start( true );
+,113552,if_Player_StartPlay();
+,113552,Streaming_Tune_Start();
+,113552,sampleTune_Start( 0 );
+,113552,sampleTune_Start( true );
+,113619,if_Player_StartPlay();
+,113619,Streaming_Tune_Start();
+,113619,sampleTune_Start( 0 );
+,113619,sampleTune_Start( true );
+,113635,if_Player_StartPlay();
+,113635,Streaming_Tune_Start();
+,113635,sampleTune_Start( 0 );
+,113635,sampleTune_Start( true );
+,113652,if_Player_StartPlay();
+,113652,Streaming_Tune_Start();
+,113652,sampleTune_Start( 0 );
+,113652,sampleTune_Start( true );
+,113707,if_Player_StartPlay();
+,113707,Streaming_Tune_Start();
+,113707,sampleTune_Start( 0 );
+,113707,sampleTune_Start( true );
+,113717,if_Player_StartPlay();
+,113717,Streaming_Tune_Start();
+,113717,sampleTune_Start( 0 );
+,113717,sampleTune_Start( true );
+,113740,if_Player_StartPlay();
+,113740,Streaming_Tune_Start();
+,113740,sampleTune_Start( 0 );
+,113740,sampleTune_Start( true );
+,113811,if_Player_StartPlay();
+,113811,Streaming_Tune_Start();
+,113811,sampleTune_Start( 0 );
+,113811,sampleTune_Start( true );
+,113846,if_Player_StartPlay();
+,113846,Streaming_Tune_Start();
+,113846,sampleTune_Start( 0 );
+,113846,sampleTune_Start( true );
+,113918,if_Player_StartPlay();
+,113918,Streaming_Tune_Start();
+,113918,sampleTune_Start( 0 );
+,113918,sampleTune_Start( true );
+,113943,if_Player_StartPlay();
+,113943,Streaming_Tune_Start();
+,113943,sampleTune_Start( 0 );
+,113943,sampleTune_Start( true );
+,114005,if_Player_StopPlay();
+,114215,if_Player_StartPlay();
+,114215,Streaming_Tune_Start();
+,114215,sampleTune_Start( 0 );
+,114215,sampleTune_Start( true );
+,114359,if_Player_StartPlay();
+,114359,Streaming_Tune_Start();
+,114359,sampleTune_Start( 0 );
+,114359,sampleTune_Start( true );
+,114533,if_Player_StartPlay();
+,114533,Streaming_Tune_Start();
+,114533,sampleTune_Start( 0 );
+,114533,sampleTune_Start( true );
+,114706,if_Player_StartPlay();
+,114706,Streaming_Tune_Start();
+,114706,sampleTune_Start( 0 );
+,114706,sampleTune_Start( true );
+,114806,if_Player_StartPlay();
+,114806,Streaming_Tune_Start();
+,114806,sampleTune_Start( 0 );
+,114806,sampleTune_Start( true );
+,115024,if_Player_StartPlay();
+,115024,Streaming_Tune_Start();
+,115024,sampleTune_Start( 0 );
+,115024,sampleTune_Start( true );
+,115504,if_Player_StartPlay();
+,115504,Streaming_Tune_Start();
+,115504,sampleTune_Start( 0 );
+,115504,sampleTune_Start( true );
+,120219,if_Player_StartPlay();
+,120219,Streaming_Tune_Start();
+,120219,sampleTune_Start( 0 );
+,120219,sampleTune_Start( true );
+,120332,if_Player_StartPlay();
+,120332,Streaming_Tune_Start();
+,120332,sampleTune_Start( 0 );
+,120332,sampleTune_Start( true );
+,120431,if_Player_StartPlay();
+,120431,Streaming_Tune_Start();
+,120431,sampleTune_Start( 0 );
+,120431,sampleTune_Start( true );
+,120640,if_Player_StartPlay();
+,120640,Streaming_Tune_Start();
+,120640,sampleTune_Start( 0 );
+,120640,sampleTune_Start( true );
+,120649,if_Player_StopPlay();
+,120700,if_Player_StartPlay();
+,120700,Streaming_Tune_Start();
+,120700,sampleTune_Start( 0 );
+,120700,sampleTune_Start( true );
+,121007,if_Player_StartPlay();
+,121007,Streaming_Tune_Start();
+,121007,sampleTune_Start( 0 );
+,121007,sampleTune_Start( true );
+,121106,if_Player_StopPlay();
+,121230,if_Player_StartPlay();
+,121230,Streaming_Tune_Start();
+,121230,sampleTune_Start( 0 );
+,121230,sampleTune_Start( true );
+,121232,if_Player_StopPlay();
+,121250,if_Player_StartPlay();
+,121250,Streaming_Tune_Start();
+,121250,sampleTune_Start( 0 );
+,121250,sampleTune_Start( true );
+,121253,if_Player_StopPlay();
+,121259,if_Player_StartPlay();
+,121259,Streaming_Tune_Start();
+,121259,sampleTune_Start( 0 );
+,121259,sampleTune_Start( true );
+,121300,if_Player_StopPlay();
+,121423,streaming release(1)
+,121423,streaming release(2)
+,121423,streaming release(3)
+,121423,streaming release(4)
+,121423,streaming release(5)
+,121423,streaming release(6)
+,121459,if_Player_StartPlay();
+,121459,Streaming_Tune_Start();
+,121459,sampleTune_Start( 0 );
+,121459,sampleTune_Start( true );
+,121503,if_Player_StopPlay();
+,121608,if_Player_StartPlay();
+,121608,Streaming_Tune_Start();
+,121608,sampleTune_Start( 0 );
+,121608,sampleTune_Start( true );
+,121632,if_Player_StopPlay();
+,121808,if_Player_StartPlay();
+,121808,Streaming_Tune_Start();
+,121808,sampleTune_Start( 0 );
+,121808,sampleTune_Start( true );
+,121844,if_Player_StopPlay();
+,121948,if_Player_StartPlay();
+,121948,Streaming_Tune_Start();
+,121948,sampleTune_Start( 0 );
+,121948,sampleTune_Start( true );
+,122026,if_Player_StopPlay();
+,122045,if_Player_StartPlay();
+,122045,Streaming_Tune_Start();
+,122045,sampleTune_Start( 0 );
+,122045,sampleTune_Start( true );
+,122125,if_Player_StopPlay();
+,122602,if_Player_StartPlay();
+,122602,Streaming_Tune_Start();
+,122602,sampleTune_Start( 0 );
+,122602,sampleTune_Start( true );
+,122647,if_Player_StopPlay();
+,123344,if_Player_StartPlay();
+,123344,Streaming_Tune_Start();
+,123344,sampleTune_Start( 0 );
+,123344,sampleTune_Start( true );
+,123443,if_Player_StopPlay();
+,123537,if_Player_StartPlay();
+,123537,Streaming_Tune_Start();
+,123537,sampleTune_Start( 0 );
+,123537,sampleTune_Start( true );
+,123618,if_Player_StopPlay();
+,123628,if_Player_StartPlay();
+,123628,Streaming_Tune_Start();
+,123628,sampleTune_Start( 0 );
+,123628,sampleTune_Start( true );
+,123901,if_Player_StopPlay();
+,123941,sampleTune_Start( 0 );
+,123941,sampleTune_Start( true );
+,123949,released interface
+,123949,released tunedata unit
+,123949,released tunedata event
+,123949,released tunedata delay
+,123949,released tunedata overdrive
+,123949,released tunedata woice
+,123949,released sample tune
+,123949,released undo event
+,123949,streaming release(1)
+,123949,streaming release(2)
+,123949,streaming release(3)
+,123949,streaming release(4)
+,123949,streaming release(5)
+,123949,streaming release(6)
+,123949,released streaming
+,123949,released dxdraw text
+,123949,released dxdraw
+,123949,released menu history
+,123949,released japanese table
