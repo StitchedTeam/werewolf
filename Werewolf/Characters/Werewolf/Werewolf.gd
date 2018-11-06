@@ -11,9 +11,12 @@ var axis = 0
 
 var speed = 5
 
+var attacking = false
+var transforming = false
+
 func _ready():
-	$WolfCollider.disabled = true
 	$AttackTimer.connect("timeout", self, "on_attack_end")
+	$TransformTimer.connect("timeout", self, "on_transform_end")
 	pass
 
 func _physics_process(delta):
@@ -23,41 +26,50 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("fire"):
 		attack()
+		manage_animation()
 	
 	pass
 
 func manage_animation():
-	if human:
-		if horax == 1:
-			$AnimationPlayer.play("HumanRight")
-		elif horax == -1:
-			$AnimationPlayer.play("HumanLeft")
-		elif vertax == 1:
-			$AnimationPlayer.play("HumanDown")
-		elif vertax == -1:
-			$AnimationPlayer.play("HumanUp")
+	if !transforming:
+		if human:
+			if horax == 1:
+				$AnimationPlayer.play("HumanRight")
+			elif horax == -1:
+				$AnimationPlayer.play("HumanLeft")
+			elif vertax == 1:
+				$AnimationPlayer.play("HumanDown")
+			elif vertax == -1:
+				$AnimationPlayer.play("HumanUp")
+			else:
+				$AnimationPlayer.play("HumanIdle")
 		else:
-			$AnimationPlayer.play("HumanIdle")
-	else:
-		if horax == 1:
-			$AnimationPlayer.play("WolfRight")
-		elif horax == -1:
-			$AnimationPlayer.play("WolfLeft")
-		else:
-			$AnimationPlayer.play("WolfIdle")
+			if !attacking:
+				if horax == 1:
+					$AnimationPlayer.play("WolfRight")
+				elif horax == -1:
+					$AnimationPlayer.play("WolfLeft")
+				elif vertax == 1:
+					$AnimationPlayer.play("WolfDown")
+				elif vertax == -1:
+					$AnimationPlayer.play("WolfUp")
+				else:
+					$AnimationPlayer.play("WolfIdle")
+			elif attacking:
+				if horax == 1:
+					$AnimationPlayer.play("AttackRight")
+				elif horax == -1:
+					$AnimationPlayer.play("AttackLeft")
+				elif vertax == 1:
+					$AnimationPlayer.play("AttackDown")
+				elif vertax == -1:
+					$AnimationPlayer.play("AttackUp")
 	pass
 
 func switch_human():
-	if human:
-		human = false
-		manage_animation()
-		$HumanCollider.disabled = true
-		$WolfCollider.disabled = false
-	else:
-		human = true
-		manage_animation()
-		$HumanCollider.disabled = false
-		$WolfCollider.disabled = true
+	transforming = true
+	$AnimationPlayer.play("Transform")
+	$TransformTimer.start()
 	pass
 
 func set_axis(var new_axis):
@@ -138,14 +150,26 @@ func find_direction_axis():
 
 func attack():
 	if !human:
-		if $RayCast2D.get_collider() != null:
+		attacking = true
+		$AttackTimer.start()
+	pass
+
+func on_attack_end():
+	attacking = false
+	if $RayCast2D.get_collider() != null:
 			enemy = $RayCast2D.get_collider().get_instance_id()
 			print(enemy)
 	pass
 
-
-
-
+func on_transform_end():
+	transforming = false
+	if human:
+		human = false
+		manage_animation()
+	else:
+		human = true
+		manage_animation()
+	pass
 
 
 
