@@ -138,8 +138,9 @@ func find_direction_axis():
 
 func attack():
 	if !human:
-		enemy = $RayCast2D.get_collider().get_instance_id()
-		print(enemy)
+		if $RayCast2D.get_collider() != null:
+			enemy = $RayCast2D.get_collider().get_instance_id()
+			print(enemy)
 	pass
 
 

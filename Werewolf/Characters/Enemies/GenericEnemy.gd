@@ -18,12 +18,15 @@ export var patrol_offset = int()
 export var character_spritesheet = int()
 export var run_state_offset = int()
 
+var death_started = false
+
 
 func _ready():
 	start_pos = position
 	max_x = start_pos.x + patrol_offset
 	min_x = start_pos.x - patrol_offset
 	$Timer.connect("timeout", self, "turn_around_timer")
+	$DeathTimer.connect("timeout", self, "death_animation_end")
 	$ScaredParticles.set_one_shot(true)
 	load_spritesheet()
 	pass
@@ -147,7 +150,13 @@ func run():
 	pass
 
 func damage():
-
 	if player.enemy == $StaticBody2D.get_instance_id():
-		get_tree().queue_delete(self)
+		if !death_started:
+			$DeathParticles.set_emitting(true)
+			$DeathTimer.start()
+			death_started = true
+	pass
+
+func death_animation_end():
+	get_tree().queue_delete(self)
 	pass
