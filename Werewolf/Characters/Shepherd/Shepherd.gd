@@ -18,20 +18,32 @@ var one = [0, 2, 3]
 var two = [0, 1, 3]
 var three = [0, 1, 2]
 
+var player
+var death_started = false
+
+export var area = int()
+
 func _ready():
 	start_pos = position
 	max_patrol = Vector2(start_pos.x + patrol_offset, start_pos.y + patrol_offset)
 	min_patrol = Vector2(start_pos.x - patrol_offset, start_pos.y - patrol_offset)
+	$AnimationPlayer.play("Right")
+	$DirChangeTimer.connect("timeout", self, "dir_change_timeout")
+	$DeathTimer.connect("timeout", self, "death_animation_end")
 	pass
 
 func _process(delta):
 	manage_state()
+	damage()
 	pass
 
 func manage_state():
 	if state == 0:
 		patrol()
 	
+	pass
+
+func load_game():
 	pass
 
 func manage_animation():
@@ -68,39 +80,54 @@ func patrol():
 		elif !dir_changing:
 			change_patrol_dir()
 	
+	if $RayCast2D.is_colliding():
+		if !dir_changing:
+			change_patrol_dir()
+	if $RayCast2D2.is_colliding():
+		if !dir_changing:
+			change_patrol_dir()
 	
 	pass
 
 func change_patrol_dir():
 	dir_changing = true
+	$DirChangeTimer.start()
 	
 	if dir == 0:
 		zero.shuffle()
 		dir = zero.front()
-		dir_changing = false
 		manage_animation()
 	elif dir == 1:
 		one.shuffle()
 		dir = one.front()
-		dir_changing = false
 		manage_animation()
 	elif dir == 2:
 		two.shuffle()
 		dir = two.front()
-		dir_changing = false
 		manage_animation()
 	elif dir == 3:
 		three.shuffle()
 		dir = three.front()
-		dir_changing = false
 		manage_animation()
 	pass
 
+func dir_change_timeout():
+	dir_changing = false
+	pass
 
+func damage():
+	if player.enemy == $StaticBody2D.get_instance_id():
+		if !death_started:
+			$DeathParticles.set_emitting(true)
+			death_started = true
+			$DeathTimer.start()
+	pass
 
-
-
-
+func death_animation_end():
+	GameGlobals.priest_alive.erase(String(area))
+	print(GameGlobals.priest_alive)
+	get_tree().queue_delete(self)
+	pass
 
 
 

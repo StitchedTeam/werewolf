@@ -26,7 +26,6 @@ radius = 21.957
 
 [node name="PlayerControl" type="Node2D"]
 script = ExtResource( 1 )
-_sections_unfolded = [ "Grow Direction" ]
 
 [node name="Center_area" type="Area2D" parent="."]
 input_pickable = true
@@ -87,7 +86,6 @@ shape = SubResource( 4 )
 [node name="Inside_sprite" type="Sprite" parent="Inside_area"]
 texture = ExtResource( 3 )
 hframes = 2
-_sections_unfolded = [ "Animation", "Offset", "texture" ]
 
 [node name="Positions" type="Node2D" parent="."]
 editor/display_folded = true

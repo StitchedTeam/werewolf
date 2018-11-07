@@ -156,6 +156,7 @@ func attack():
 
 func on_attack_end():
 	attacking = false
+	manage_animation()
 	if $RayCast2D.get_collider() != null:
 			enemy = $RayCast2D.get_collider().get_instance_id()
 			print(enemy)

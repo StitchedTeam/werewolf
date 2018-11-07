@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Resource",
+"class": "SaveSlot",
+"language": "GDScript",
+"path": "res://Resources/SaveSlot.gd"
+} ]
 _global_script_class_icons={
-
+"SaveSlot": ""
 }
 
 [application]
@@ -21,7 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerGlobals="res://Singletons/PlayerGlobals.gd"
+GameGlobals="*res://Singletons/Globals.gd"
 
 [display]
 
@@ -133,6 +138,8 @@ quality/shadow_atlas/quadrant_3_subdiv=0
 quality/reflections/texture_array_reflections=false
 quality/reflections/high_quality_ggx=false
 quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
 quality/depth_prepass/enable=false
 quality/subsurface_scattering/weight_samples=false
 quality/voxel_cone_tracing/high_quality=false
@@ -140,5 +147,3 @@ quality/reflections/atlas_size=0
 quality/reflections/atlas_subdiv=0
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
-quality/shading/force_lambert_over_burley.mobile=false
-quality/shading/force_blinn_over_ggx.mobile=false

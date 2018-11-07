@@ -20,6 +20,8 @@ export var run_state_offset = int()
 
 var death_started = false
 
+export var area = int()
+
 
 func _ready():
 	start_pos = position
@@ -185,10 +187,11 @@ func run():
 
 func damage():
 	if player.enemy == $StaticBody2D.get_instance_id():
-		if !death_started:
-			$DeathParticles.set_emitting(true)
-			$DeathTimer.start()
-			death_started = true
+		if !GameGlobals.priest_alive.has(String(area)):
+			if !death_started:
+				$DeathParticles.set_emitting(true)
+				$DeathTimer.start()
+				death_started = true
 	pass
 
 func death_animation_end():

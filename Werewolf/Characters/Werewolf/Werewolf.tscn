@@ -10,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 5.0
 height = 17.0
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 
 resource_name = "AttackDown"
 length = 1.2
@@ -41,7 +41,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=3]
 
 resource_name = "AttackLeft"
 length = 1.2
@@ -72,7 +72,7 @@ tracks/1/keys = {
 "values": [ 24, 25, 26, 28 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=4]
 
 resource_name = "AttackRight"
 length = 1.2
@@ -103,7 +103,7 @@ tracks/1/keys = {
 "values": [ 24, 25, 26, 28 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=5]
 
 resource_name = "AttackUp"
 length = 1.2
@@ -134,9 +134,8 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-resource_name = "HumanDown"
 length = 1.2
 loop = true
 step = 0.1
@@ -213,7 +212,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 
 length = 1.2
 loop = true
@@ -291,7 +290,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 
 length = 1.2
 loop = true
@@ -369,7 +368,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 
 length = 1.2
 loop = true
@@ -447,7 +446,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=10]
 
 length = 1.2
 loop = true
@@ -525,7 +524,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=11]
 
 resource_name = "Transform"
 length = 1.8
@@ -544,9 +543,8 @@ tracks/0/keys = {
 "values": [ 4, 5, 10, 11, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 
-resource_name = "WolfDown"
 length = 1.2
 loop = true
 step = 0.1
@@ -635,9 +633,8 @@ tracks/6/keys = {
 "values": [ 24.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=13]
 
-resource_name = "WolfIdle"
 length = 1.2
 loop = true
 step = 0.1
@@ -714,9 +711,8 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 3 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=14]
 
-resource_name = "WolfLeft"
 length = 1.2
 loop = true
 step = 0.1
@@ -817,9 +813,8 @@ tracks/7/keys = {
 "values": [ 7.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=15]
 
-resource_name = "WolfRight"
 length = 1.2
 loop = true
 step = 0.1
@@ -920,9 +915,8 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 3 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=16]
 
-resource_name = "WolfUp"
 length = 1.2
 loop = true
 step = 0.1
@@ -1038,21 +1032,21 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/AttackDown = SubResource( 12 )
-anims/AttackLeft = SubResource( 15 )
-anims/AttackRight = SubResource( 14 )
-anims/AttackUp = SubResource( 13 )
-anims/HumanDown = SubResource( 2 )
-anims/HumanIdle = SubResource( 3 )
-anims/HumanLeft = SubResource( 4 )
-anims/HumanRight = SubResource( 5 )
-anims/HumanUp = SubResource( 6 )
-anims/Transform = SubResource( 16 )
-anims/WolfDown = SubResource( 10 )
-anims/WolfIdle = SubResource( 7 )
-anims/WolfLeft = SubResource( 8 )
-anims/WolfRight = SubResource( 9 )
-anims/WolfUp = SubResource( 11 )
+anims/AttackDown = SubResource( 2 )
+anims/AttackLeft = SubResource( 3 )
+anims/AttackRight = SubResource( 4 )
+anims/AttackUp = SubResource( 5 )
+anims/HumanDown = SubResource( 6 )
+anims/HumanIdle = SubResource( 7 )
+anims/HumanLeft = SubResource( 8 )
+anims/HumanRight = SubResource( 9 )
+anims/HumanUp = SubResource( 10 )
+anims/Transform = SubResource( 11 )
+anims/WolfDown = SubResource( 12 )
+anims/WolfIdle = SubResource( 13 )
+anims/WolfLeft = SubResource( 14 )
+anims/WolfRight = SubResource( 15 )
+anims/WolfUp = SubResource( 16 )
 blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="."]

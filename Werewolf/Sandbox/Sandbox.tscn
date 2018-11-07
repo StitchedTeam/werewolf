@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sandbox/Sandbox.gd" type="Script" id=1]
 [ext_resource path="res://Props/Scenario.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Werewolf/Werewolf.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Props/Moonlight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/GenericEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Shepherd/Shepherd.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -31,25 +32,35 @@ anims/LightCycle = SubResource( 1 )
 blend_times = [  ]
 
 [node name="Moonlight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 246, -217 )
+position = Vector2( 246, -216.659 )
 
 [node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="GenericEnemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 211, 172 )
 run_state_offset = 400
+area = 1
 
 [node name="GenericEnemy2" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 194.219, 72.7354 )
 character_spritesheet = 1
 run_state_offset = 400
+area = 1
 
 [node name="GenericEnemy3" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 129.221, 116.841 )
 run_state_offset = 400
+area = 1
 
 [node name="GenericEnemy4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 311.834, 106.782 )
 character_spritesheet = 1
 run_state_offset = 400
+area = 1
+
+[node name="Shepherd" parent="." instance=ExtResource( 6 )]
+position = Vector2( 150, 83.7354 )
+patrol_offset = 45
+area = 1
 
