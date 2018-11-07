@@ -55,6 +55,40 @@ func load_spritesheet():
 		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy1.png")
 	elif character_spritesheet == 1:
 		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy2.png")
+	elif character_spritesheet == 2:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_00.png")
+	elif character_spritesheet == 3:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_01.png")
+	elif character_spritesheet == 4:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_02.png")
+	elif character_spritesheet == 5:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_03.png")
+	elif character_spritesheet == 6:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_04.png")
+	elif character_spritesheet == 7:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_05.png")
+	elif character_spritesheet == 8:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_06.png")
+	elif character_spritesheet == 9:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_07.png")
+	elif character_spritesheet == 10:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_08.png")
+	elif character_spritesheet == 11:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_09.png")
+	elif character_spritesheet == 12:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_10.png")
+	elif character_spritesheet == 13:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_11.png")
+	elif character_spritesheet == 14:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_12.png")
+	elif character_spritesheet == 15:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_13.png")
+	elif character_spritesheet == 16:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_14.png")
+	elif character_spritesheet == 17:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_15.png")
+	elif character_spritesheet == 18:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_16.png")
 	pass
 
 func manage_state():

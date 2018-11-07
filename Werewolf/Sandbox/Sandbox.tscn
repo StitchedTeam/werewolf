@@ -34,15 +34,14 @@ blend_times = [  ]
 position = Vector2( 246, -217 )
 
 [node name="Enemies" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="GenericEnemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 211, 172 )
-character_spritesheet = 1
 run_state_offset = 400
 
 [node name="GenericEnemy2" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 194.219, 72.7354 )
+character_spritesheet = 1
 run_state_offset = 400
 
 [node name="GenericEnemy3" parent="Enemies" instance=ExtResource( 5 )]
