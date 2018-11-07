@@ -14,6 +14,8 @@ var speed = 5
 var attacking = false
 var transforming = false
 
+var life = 0
+
 func _ready():
 	$AttackTimer.connect("timeout", self, "on_attack_end")
 	$TransformTimer.connect("timeout", self, "on_transform_end")
