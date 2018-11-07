@@ -29,10 +29,20 @@ func _process(delta):
 	pass
 
 func manage_state():
-	
 	if state == 0:
 		patrol()
 	
+	pass
+
+func manage_animation():
+	if dir == 0:
+		$AnimationPlayer.play("Right")
+	elif dir == 1:
+		$AnimationPlayer.play("Left")
+	elif dir == 2:
+		$AnimationPlayer.play("Up")
+	elif dir == 3:
+		$AnimationPlayer.play("Down")
 	pass
 
 func patrol():
@@ -62,26 +72,28 @@ func patrol():
 	pass
 
 func change_patrol_dir():
-	print("change patrol dir")
 	dir_changing = true
 	
 	if dir == 0:
 		zero.shuffle()
 		dir = zero.front()
 		dir_changing = false
+		manage_animation()
 	elif dir == 1:
 		one.shuffle()
 		dir = one.front()
 		dir_changing = false
+		manage_animation()
 	elif dir == 2:
 		two.shuffle()
 		dir = two.front()
 		dir_changing = false
+		manage_animation()
 	elif dir == 3:
 		three.shuffle()
 		dir = three.front()
 		dir_changing = false
-	
+		manage_animation()
 	pass
 
 
