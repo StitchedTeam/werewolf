@@ -56,10 +56,11 @@ func on_click_counted():
 
 func start_game():
 	GameGlobals.reset_save()
-	get_tree().change_scene("res://Sandbox/Sandbox.tscn")
+	GameGlobals.load_game()
+	get_tree().change_scene("res://GameScenes/Game.tscn")
 	pass
 
 func load_game():
 	GameGlobals.load_game()
-	get_tree().change_scene("res://Sandbox/Sandbox.tscn")
+	get_tree().change_scene("res://GameScenes/Game.tscn")
 	pass

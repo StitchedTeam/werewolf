@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Piskel.png-7f3cd37886fe4c6f5a56dfcfd1116eb5.stex"
+path="res://.import/sprite_0.png-8f3afa9319249be09f4332246b3e9c25.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Placeholder/New Piskel.png"
-dest_files=[ "res://.import/New Piskel.png-7f3cd37886fe4c6f5a56dfcfd1116eb5.stex" ]
+source_file="res://Assets/Sprites/Placeholder/sprite_0.png"
+dest_files=[ "res://.import/sprite_0.png-8f3afa9319249be09f4332246b3e9c25.stex" ]
 
 [params]
 

@@ -537,7 +537,7 @@ tracks/5/keys = {
 "values": [ 17.0 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=11]
 
 resource_name = "Loading"
 length = 2.0
@@ -568,9 +568,8 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
-resource_name = "Transform"
 length = 1.8
 loop = false
 step = 0.1
@@ -587,7 +586,7 @@ tracks/0/keys = {
 "values": [ 4, 5, 10, 11, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
 length = 1.2
 loop = true
@@ -677,7 +676,7 @@ tracks/6/keys = {
 "values": [ 24.0 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
 length = 1.2
 loop = true
@@ -755,7 +754,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 3 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 
 length = 1.2
 loop = true
@@ -857,7 +856,7 @@ tracks/7/keys = {
 "values": [ 7.0 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 
 length = 1.2
 loop = true
@@ -959,7 +958,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 3 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 
 length = 1.2
 loop = true
@@ -1085,13 +1084,13 @@ anims/HumanIdle = SubResource( 7 )
 anims/HumanLeft = SubResource( 8 )
 anims/HumanRight = SubResource( 9 )
 anims/HumanUp = SubResource( 10 )
-anims/Loading = SubResource( 17 )
-anims/Transform = SubResource( 11 )
-anims/WolfDown = SubResource( 12 )
-anims/WolfIdle = SubResource( 13 )
-anims/WolfLeft = SubResource( 14 )
-anims/WolfRight = SubResource( 15 )
-anims/WolfUp = SubResource( 16 )
+anims/Loading = SubResource( 11 )
+anims/Transform = SubResource( 12 )
+anims/WolfDown = SubResource( 13 )
+anims/WolfIdle = SubResource( 14 )
+anims/WolfLeft = SubResource( 15 )
+anims/WolfRight = SubResource( 16 )
+anims/WolfUp = SubResource( 17 )
 blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
