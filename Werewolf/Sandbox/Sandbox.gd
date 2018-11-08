@@ -3,7 +3,9 @@ extends Node
 var dir = 1
 
 func _ready():
+	$Werewolf/AnimationPlayer.play("Loading")
 	loading()
+	$Werewolf/AnimationPlayer.play("HumanIdle")
 	pass 
 
 func _process(delta):
@@ -34,11 +36,9 @@ func walklight():
 	pass
 
 func loading():
-	if !GameGlobals.priest_alive.has("1"):
-		$Shepherd.remove()
 	$Enemies/GenericEnemy.player = $Werewolf
 	$Enemies/GenericEnemy2.player = $Werewolf
 	$Enemies/GenericEnemy3.player = $Werewolf
 	$Enemies/GenericEnemy4.player = $Werewolf
-	$Shepherd.player = $Werewolf
+	$Shepherds/Shepherd.player = $Werewolf
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sandbox/Sandbox.gd" type="Script" id=1]
 [ext_resource path="res://Props/Scenario.tscn" type="PackedScene" id=2]
@@ -7,13 +7,6 @@
 [ext_resource path="res://Characters/Enemies/GenericEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Shepherd/Shepherd.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=1]
-
-resource_name = "LightCycle"
-length = 1.0
-loop = false
-step = 0.1
-
 [node name="Sandbox" type="Node"]
 script = ExtResource( 1 )
 
@@ -21,15 +14,6 @@ script = ExtResource( 1 )
 
 [node name="Werewolf" parent="." instance=ExtResource( 3 )]
 position = Vector2( 208, 100 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/LightCycle = SubResource( 1 )
-blend_times = [  ]
 
 [node name="Moonlight" parent="." instance=ExtResource( 4 )]
 position = Vector2( 246, -216.659 )
@@ -59,7 +43,9 @@ character_spritesheet = 1
 run_state_offset = 400
 area = 1
 
-[node name="Shepherd" parent="." instance=ExtResource( 6 )]
+[node name="Shepherds" type="Node2D" parent="."]
+
+[node name="Shepherd" parent="Shepherds" instance=ExtResource( 6 )]
 position = Vector2( 150, 83.7354 )
 patrol_offset = 45
 area = 1

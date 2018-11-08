@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Characters/Werewolf/Werewolf.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/Lobo Sprite Sheet (2).png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/Placeholder/New Piskel (2).png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -289,6 +290,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [ 17.0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Camera2D/LoadingScreen:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -522,6 +535,37 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 17.0 ]
+}
+
+[sub_resource type="Animation" id=17]
+
+resource_name = "Loading"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D/LoadingScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D/LoadingScreen:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1020,7 +1064,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 vframes = 11
 hframes = 6
-frame = 4
+frame = 30
 
 [node name="HumanCollider" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 6 )
@@ -1041,6 +1085,7 @@ anims/HumanIdle = SubResource( 7 )
 anims/HumanLeft = SubResource( 8 )
 anims/HumanRight = SubResource( 9 )
 anims/HumanUp = SubResource( 10 )
+anims/Loading = SubResource( 17 )
 anims/Transform = SubResource( 11 )
 anims/WolfDown = SubResource( 12 )
 anims/WolfIdle = SubResource( 13 )
@@ -1050,7 +1095,6 @@ anims/WolfUp = SubResource( 16 )
 blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-editor/display_folded = true
 anchor_mode = 1
 rotating = false
 current = true
@@ -1081,6 +1125,16 @@ z_index = 1
 position = Vector2( 120, 40 )
 z_index = 1
 
+[node name="LoadingScreen" type="Sprite" parent="Camera2D"]
+visible = false
+position = Vector2( -24, -39 )
+scale = Vector2( 1.4, 1.4 )
+z_index = 2
+texture = ExtResource( 4 )
+vframes = 2
+hframes = 2
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z Index" ]
+
 [node name="TransformTimer" type="Timer" parent="."]
 process_mode = 1
 wait_time = 1.8
@@ -1099,6 +1153,4 @@ enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, -20 )
 collision_mask = 2
-collide_with_areas = false
-collide_with_bodies = true
 

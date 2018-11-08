@@ -1,7 +1,5 @@
 extends Node2D
 
-var state = 0
-
 var dir = 0
 var dir_changing = false
 
@@ -24,28 +22,12 @@ var death_started = false
 export var area = int()
 
 func _ready():
-	#$StartTimer.connect("timeout", self, "on_load_complete")
-	#$StartTimer.start()
-	start_pos = position
-	max_patrol = Vector2(start_pos.x + patrol_offset, start_pos.y + patrol_offset)
-	min_patrol = Vector2(start_pos.x - patrol_offset, start_pos.y - patrol_offset)
-	$AnimationPlayer.play("Right")
-	$DirChangeTimer.connect("timeout", self, "dir_change_timeout")
-	$DeathTimer.connect("timeout", self, "death_animation_end")
+	loading()
 	pass
 
 func _process(delta):
-	manage_state()
+	patrol()
 	damage()
-	pass
-
-func manage_state():
-	if state == 0:
-		patrol()
-	
-	pass
-
-func load_game():
 	pass
 
 func manage_animation():
@@ -129,18 +111,20 @@ func death_animation_end():
 	GameGlobals.priest_alive.erase(String(area))
 	GameGlobals.save(GameGlobals.build_save())
 	print(GameGlobals.priest_alive)
-	get_tree().queue_delete(self)
+	remove()
 	pass
 
 func remove():
 	get_tree().queue_delete(self)
 	pass
 
-func on_load_complete():
-	player = GameGlobals.player
+func loading():
+	if !GameGlobals.priest_alive.has(String(area)):
+		remove()
+	start_pos = position
+	max_patrol = Vector2(start_pos.x + patrol_offset, start_pos.y + patrol_offset)
+	min_patrol = Vector2(start_pos.x - patrol_offset, start_pos.y - patrol_offset)
+	$AnimationPlayer.play("Right")
+	$DirChangeTimer.connect("timeout", self, "dir_change_timeout")
+	$DeathTimer.connect("timeout", self, "death_animation_end")
 	pass
-
-
-
-
-

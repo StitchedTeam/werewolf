@@ -22,17 +22,8 @@ var death_started = false
 
 export var area = int()
 
-
 func _ready():
-	#$StartTimer.connect("timeout", self, "on_load_complete")
-	#$StartTimer.start()
-	start_pos = position
-	max_x = start_pos.x + patrol_offset
-	min_x = start_pos.x - patrol_offset
-	$Timer.connect("timeout", self, "turn_around_timer")
-	$DeathTimer.connect("timeout", self, "death_animation_end")
-	$ScaredParticles.set_one_shot(true)
-	load_spritesheet()
+	loading()
 	pass
 
 func _process(delta):
@@ -52,47 +43,6 @@ func manage_animation():
 		if anim != -1:
 			$AnimationPlayer.play("Left")
 			anim = -1
-	pass
-
-func load_spritesheet():
-	if character_spritesheet == 0:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy1.png")
-	elif character_spritesheet == 1:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy2.png")
-	elif character_spritesheet == 2:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_00.png")
-	elif character_spritesheet == 3:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_01.png")
-	elif character_spritesheet == 4:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_02.png")
-	elif character_spritesheet == 5:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_03.png")
-	elif character_spritesheet == 6:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_04.png")
-	elif character_spritesheet == 7:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_05.png")
-	elif character_spritesheet == 8:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_06.png")
-	elif character_spritesheet == 9:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_07.png")
-	elif character_spritesheet == 10:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_08.png")
-	elif character_spritesheet == 11:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_09.png")
-	elif character_spritesheet == 12:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_10.png")
-	elif character_spritesheet == 13:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_11.png")
-	elif character_spritesheet == 14:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_12.png")
-	elif character_spritesheet == 15:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_13.png")
-	elif character_spritesheet == 16:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_14.png")
-	elif character_spritesheet == 17:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_15.png")
-	elif character_spritesheet == 18:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_16.png")
 	pass
 
 func manage_state():
@@ -200,6 +150,53 @@ func death_animation_end():
 	get_tree().queue_delete(self)
 	pass
 
-func on_load_complete():
-	player = GameGlobals.player
+func loading():
+	start_pos = position
+	max_x = start_pos.x + patrol_offset
+	min_x = start_pos.x - patrol_offset
+	$Timer.connect("timeout", self, "turn_around_timer")
+	$DeathTimer.connect("timeout", self, "death_animation_end")
+	$ScaredParticles.set_one_shot(true)
+	load_spritesheet()
+	pass
+
+func load_spritesheet():
+	if character_spritesheet == 0:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy1.png")
+	elif character_spritesheet == 1:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy2.png")
+	elif character_spritesheet == 2:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_00.png")
+	elif character_spritesheet == 3:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_01.png")
+	elif character_spritesheet == 4:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_02.png")
+	elif character_spritesheet == 5:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_03.png")
+	elif character_spritesheet == 6:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_04.png")
+	elif character_spritesheet == 7:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_05.png")
+	elif character_spritesheet == 8:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_06.png")
+	elif character_spritesheet == 9:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_07.png")
+	elif character_spritesheet == 10:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_08.png")
+	elif character_spritesheet == 11:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_09.png")
+	elif character_spritesheet == 12:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_10.png")
+	elif character_spritesheet == 13:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_11.png")
+	elif character_spritesheet == 14:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_12.png")
+	elif character_spritesheet == 15:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_13.png")
+	elif character_spritesheet == 16:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_14.png")
+	elif character_spritesheet == 17:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_15.png")
+	elif character_spritesheet == 18:
+		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_16.png")
 	pass
