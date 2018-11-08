@@ -111,11 +111,11 @@ func death_animation_end():
 	GameGlobals.priest_alive.erase(String(area))
 	GameGlobals.save(GameGlobals.build_save())
 	print(GameGlobals.priest_alive)
+	GameGlobals.life += 20
 	remove()
 	pass
 
 func remove():
-	GameGlobals.life += 20
 	get_tree().queue_delete(self)
 	pass
 

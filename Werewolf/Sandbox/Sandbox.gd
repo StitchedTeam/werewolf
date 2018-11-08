@@ -41,4 +41,5 @@ func loading():
 	$Enemies/GenericEnemy3.player = $Werewolf
 	$Enemies/GenericEnemy4.player = $Werewolf
 	$Shepherds/Shepherd.player = $Werewolf
+	$Church.player = $Werewolf
 	pass

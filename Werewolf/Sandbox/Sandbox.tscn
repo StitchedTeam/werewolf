@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sandbox/Sandbox.gd" type="Script" id=1]
 [ext_resource path="res://Props/Scenario.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Props/Moonlight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/GenericEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Shepherd/Shepherd.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Props/Church.tscn" type="PackedScene" id=7]
 
 [node name="Sandbox" type="Node"]
 script = ExtResource( 1 )
@@ -48,5 +49,9 @@ area = 1
 [node name="Shepherd" parent="Shepherds" instance=ExtResource( 6 )]
 position = Vector2( 150, 83.7354 )
 patrol_offset = 45
+area = 1
+
+[node name="Church" parent="." instance=ExtResource( 7 )]
+position = Vector2( 194.219, 340 )
 area = 1
 

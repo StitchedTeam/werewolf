@@ -11,6 +11,8 @@ var priest_alive = {"1": true}
 var church_exists = {"1": true}
 var life = 100
 
+var enemies_alive = {"1": 4}
+
 var saved = false
 
 var player
