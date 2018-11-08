@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Characters/Werewolf/Werewolf.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/Lobo Sprite Sheet (2).png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerControl.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sprites/Placeholder/New Piskel (2).png" type="Texture" id=4]
+[ext_resource path="res://Resources/main_theme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Sprites/Placeholder/New Piskel (2).png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -1118,21 +1119,64 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="UI" type="Node2D" parent="Camera2D"]
+editor/display_folded = true
 z_index = 1
 
 [node name="PlayerControl" parent="Camera2D/UI" instance=ExtResource( 3 )]
 position = Vector2( 120, 40 )
 z_index = 1
 
+[node name="HUD" type="Control" parent="Camera2D/UI"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/UI/HUD"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = -105.0
+margin_right = 188.0
+margin_bottom = -91.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+theme = ExtResource( 4 )
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+allow_greater = false
+allow_lesser = false
+percent_visible = false
+
 [node name="LoadingScreen" type="Sprite" parent="Camera2D"]
 visible = false
 position = Vector2( -24, -39 )
 scale = Vector2( 1.4, 1.4 )
 z_index = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 vframes = 2
 hframes = 2
-_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="TransformTimer" type="Timer" parent="."]
 process_mode = 1
@@ -1146,10 +1190,18 @@ wait_time = 1.2
 one_shot = true
 autostart = false
 
+[node name="LifeTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 0, -4 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, -20 )
 collision_mask = 2
+collide_with_areas = false
+collide_with_bodies = true
 

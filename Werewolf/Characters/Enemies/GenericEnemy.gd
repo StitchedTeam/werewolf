@@ -147,6 +147,7 @@ func damage():
 	pass
 
 func death_animation_end():
+	GameGlobals.life += 10
 	get_tree().queue_delete(self)
 	pass
 

@@ -5,7 +5,10 @@ func _ready():
 	pass
 
 func _process(delta):
+	if GameGlobals.life > 100:
+		GameGlobals.life = 100
 	pause()
+	game_over()
 	pass
 
 func pause():
@@ -38,6 +41,15 @@ func pause():
 		$CanvasLayer/UI/PauseScreen/MainMenuButton.set_visible(true)
 		$CanvasLayer/UI/PauseScreen/MainMenuScreen.set_visible(false)
 	if $CanvasLayer/UI/PauseScreen/MainMenuScreen/YesButton.pressed:
+		get_tree().paused = false
+		get_tree().change_scene("res://GameScenes/MainMenu.tscn")
+	pass
+
+func game_over():
+	if $Sandbox/Werewolf.game_over:
+		get_tree().paused = true
+		$CanvasLayer/UI/GameOverScreen.set_visible(true)
+	if $CanvasLayer/UI/GameOverScreen/MainMenuButton.pressed:
 		get_tree().paused = false
 		get_tree().change_scene("res://GameScenes/MainMenu.tscn")
 	pass

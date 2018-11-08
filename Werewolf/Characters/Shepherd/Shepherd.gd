@@ -115,6 +115,7 @@ func death_animation_end():
 	pass
 
 func remove():
+	GameGlobals.life += 20
 	get_tree().queue_delete(self)
 	pass
 

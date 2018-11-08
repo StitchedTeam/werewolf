@@ -14,22 +14,37 @@ var speed = 5
 var attacking = false
 var transforming = false
 
-var life = 0
+var life = GameGlobals.life
+var life_changing = false
+
+var game_over = false
 
 func _ready():
 	$AttackTimer.connect("timeout", self, "on_attack_end")
 	$TransformTimer.connect("timeout", self, "on_transform_end")
+	$LifeTimer.connect("timeout", self, "on_life_timeout")
 	pass
 
 func _physics_process(delta):
 	
 	move_and_slide(Vector2 (speed * horax, speed * vertax))
 	find_direction_axis()
-	
+	wolf_life()
+	death()
 	if Input.is_action_just_pressed("fire"):
 		attack()
 		manage_animation()
 	
+	pass
+
+func wolf_life():
+	if !human:
+		if !life_changing:
+			life_changing = true
+			$LifeTimer.start()
+			$Camera2D/UI/HUD/ProgressBar.value = life
+	else:
+		$LifeTimer.stop()
 	pass
 
 func manage_animation():
@@ -168,15 +183,24 @@ func on_transform_end():
 	transforming = false
 	if human:
 		human = false
+		$Camera2D/UI/HUD.set_visible(true)
 		manage_animation()
 	else:
 		human = true
 		manage_animation()
 	pass
 
+func on_life_timeout():
+	GameGlobals.life -= 1
+	life = GameGlobals.life
+	life_changing = false
+	pass
 
-
-
+func death():
+	if life <= 0:
+		game_over = true
+		GameGlobals.reset_save()
+	pass
 
 
 

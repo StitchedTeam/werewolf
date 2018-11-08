@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GameScenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://Resources/main_theme.tres" type="Theme" id=5]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -34,7 +35,6 @@ one_shot = true
 autostart = false
 
 [node name="Panel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -214,7 +214,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Options" type="Control" parent="Panel"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -260,10 +259,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 70.0
-margin_right = 370.0
-margin_bottom = 86.0
+margin_left = 225.0
+margin_top = 90.0
+margin_right = 365.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -271,6 +270,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+theme = ExtResource( 5 )
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -314,10 +314,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 120.0
-margin_right = 370.0
-margin_bottom = 136.0
+margin_left = 225.0
+margin_top = 140.0
+margin_right = 365.0
+margin_bottom = 160.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -325,6 +325,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+theme = ExtResource( 5 )
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -358,53 +359,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "SFX Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="ButtonsPlace" type="CheckButton" parent="Panel/Options"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 120.0
-margin_right = 86.0
-margin_bottom = 160.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ButtonsPlaceText" type="Label" parent="Panel/Options/ButtonsPlace"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = -18.0
-margin_right = 135.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Controls placement"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

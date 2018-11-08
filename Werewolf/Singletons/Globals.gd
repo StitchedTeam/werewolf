@@ -5,11 +5,11 @@ var file = File.new()
 
 const PRIEST_ALIVE = {"1": true}
 const CHURCH_EXISTS = {"1": true}
-const LIFE = 0
+const LIFE = 100
 
 var priest_alive = {"1": true}
 var church_exists = {"1": true}
-var life = 0
+var life = 100
 
 var saved = false
 
@@ -25,11 +25,12 @@ func save(content):
 func load_game():
 	file.open("user://save_game.dat", File.READ)
 	var content = file.get_var()
-	priest_alive = content.priest_alive
-	church_exists = content.church_exists
-	life = content.life
-	saved = content.saved
 	file.close()
+	if content != null:
+		priest_alive = content.priest_alive
+		church_exists = content.church_exists
+		life = content.life
+		saved = content.saved
 	pass
 
 func reset_save():

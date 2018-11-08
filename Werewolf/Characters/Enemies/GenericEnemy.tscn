@@ -264,6 +264,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 50, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DCollUp" type="RayCast2D" parent="."]
 position = Vector2( 0, 13.315 )
@@ -271,6 +273,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 5, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DCollDown" type="RayCast2D" parent="."]
 position = Vector2( 0, -14.685 )
@@ -278,6 +282,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 5, 0 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DRunUp" type="RayCast2D" parent="."]
 position = Vector2( 0, -12 )
@@ -285,6 +291,8 @@ enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, -3 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="RayCast2DRunDown" type="RayCast2D" parent="."]
 position = Vector2( 0, 11 )
@@ -292,6 +300,8 @@ enabled = false
 exclude_parent = true
 cast_to = Vector2( 0, 3 )
 collision_mask = 1
+collide_with_areas = false
+collide_with_bodies = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
@@ -357,9 +367,6 @@ collision_layer = 2
 collision_mask = 2
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-physics_material_override = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -6, 0 )
