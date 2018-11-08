@@ -11,20 +11,15 @@ var priest_alive = {"1": true}
 var church_exists = {"1": true}
 var life = 0
 
+var saved = false
+
+var player
+
 func save(content):
+	saved = true
 	file.open("user://save_game.dat", File.WRITE)
 	file.store_var(content)
 	file.close()
-	pass
-
-func check_save():
-	file.open("user://save_game.dat", File.READ)
-	var content = file.get_var()
-	file.close()
-	if (content.priest_alive == PRIEST_ALIVE) && (content.church_exists == CHURCH_EXISTS) && (content.life == LIFE):
-		return false
-	else:
-		return true
 	pass
 
 func load_game():
@@ -33,15 +28,27 @@ func load_game():
 	priest_alive = content.priest_alive
 	church_exists = content.church_exists
 	life = content.life
+	saved = content.saved
 	file.close()
 	pass
 
 func reset_save():
 	var save_dic = {
 		"priest_alive": PRIEST_ALIVE,
-		"church_exist": CHURCH_EXISTS,
-		"life": LIFE
+		"church_exists": CHURCH_EXISTS,
+		"life": LIFE,
+		"saved": false
 		}
-	
 	save(save_dic)
+	saved = false
+	pass
+
+func build_save():
+	var save_dic = {
+		"priest_alive": priest_alive,
+		"church_exists": church_exists,
+		"life": life,
+		"saved" : true
+		}
+	return save_dic
 	pass

@@ -3,6 +3,7 @@ extends Node
 var initial_buttons_enabled = true
 
 func _ready():
+	GameGlobals.load_game()
 	$ClickCount.connect("timeout", self, "on_click_counted")
 	pass
 
@@ -13,7 +14,7 @@ func _process(delta):
 func buttons_check():
 	
 	if $Panel/StartButtons/Play.is_pressed():
-		if GameGlobals.check_save():
+		if GameGlobals.saved:
 			$Panel/NewGameCheck.visible = true
 			$Panel/StartButtons.visible = false
 			$ClickCount.start()

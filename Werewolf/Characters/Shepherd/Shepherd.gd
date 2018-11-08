@@ -24,6 +24,8 @@ var death_started = false
 export var area = int()
 
 func _ready():
+	#$StartTimer.connect("timeout", self, "on_load_complete")
+	#$StartTimer.start()
 	start_pos = position
 	max_patrol = Vector2(start_pos.x + patrol_offset, start_pos.y + patrol_offset)
 	min_patrol = Vector2(start_pos.x - patrol_offset, start_pos.y - patrol_offset)
@@ -125,6 +127,7 @@ func damage():
 
 func death_animation_end():
 	GameGlobals.priest_alive.erase(String(area))
+	GameGlobals.save(GameGlobals.build_save())
 	print(GameGlobals.priest_alive)
 	get_tree().queue_delete(self)
 	pass
@@ -133,7 +136,9 @@ func remove():
 	get_tree().queue_delete(self)
 	pass
 
-
+func on_load_complete():
+	player = GameGlobals.player
+	pass
 
 
 

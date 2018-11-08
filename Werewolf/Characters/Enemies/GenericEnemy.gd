@@ -24,6 +24,8 @@ export var area = int()
 
 
 func _ready():
+	#$StartTimer.connect("timeout", self, "on_load_complete")
+	#$StartTimer.start()
 	start_pos = position
 	max_x = start_pos.x + patrol_offset
 	min_x = start_pos.x - patrol_offset
@@ -196,4 +198,8 @@ func damage():
 
 func death_animation_end():
 	get_tree().queue_delete(self)
+	pass
+
+func on_load_complete():
+	player = GameGlobals.player
 	pass
