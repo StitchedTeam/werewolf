@@ -26,7 +26,7 @@ axis_stretch_vertical = 2
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -253,7 +253,7 @@ HSlider/icons/grabber_highlight = ExtResource( 1 )
 HSlider/icons/tick = null
 HSlider/styles/focus = null
 HSlider/styles/grabber_area = SubResource( 1 )
-HSlider/styles/grabber_disabled = SubResource( 7 )
+HSlider/styles/grabber_disabled = SubResource( 2 )
 HSlider/styles/grabber_highlight = SubResource( 3 )
 HSlider/styles/slider = SubResource( 4 )
 HSplitContainer/constants/autohide = 1
