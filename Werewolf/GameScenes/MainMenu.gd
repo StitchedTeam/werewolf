@@ -13,10 +13,13 @@ func _process(delta):
 func buttons_check():
 	
 	if $Panel/StartButtons/Play.is_pressed():
-		$Panel/NewGameCheck.visible = true
-		$Panel/StartButtons.visible = false
-		$ClickCount.start()
-	
+		if GameGlobals.check_save():
+			$Panel/NewGameCheck.visible = true
+			$Panel/StartButtons.visible = false
+			$ClickCount.start()
+		else:
+			start_game()
+		
 	if $Panel/StartButtons/Options.is_pressed():
 		$Panel/StartButtons.visible = false
 		$Panel/Options.visible = true
@@ -32,15 +35,30 @@ func buttons_check():
 		$Panel/About.visible = false
 		$Panel/Back.visible = false
 	
+	if $Panel/NewGameCheck/NewGame.is_pressed():
+		start_game()
+	
+	if $Panel/NewGameCheck/Continue.is_pressed():
+		load_game()
+	
 	if Input.is_action_just_pressed("click") && !initial_buttons_enabled && !$Panel/NewGameCheck/NewGame.is_pressed() && !$Panel/NewGameCheck/Continue.is_pressed():
 		initial_buttons_enabled = true
 		$Panel/NewGameCheck.visible = false
 		$Panel/StartButtons.visible = true
 	
 	
-	
 	pass
 
 func on_click_counted():
 	initial_buttons_enabled = false
+	pass
+
+func start_game():
+	GameGlobals.reset_save()
+	get_tree().change_scene("res://Sandbox/Sandbox.tscn")
+	pass
+
+func load_game():
+	GameGlobals.load_game()
+	get_tree().change_scene("res://Sandbox/Sandbox.tscn")
 	pass

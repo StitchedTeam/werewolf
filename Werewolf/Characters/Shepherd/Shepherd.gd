@@ -129,6 +129,9 @@ func death_animation_end():
 	get_tree().queue_delete(self)
 	pass
 
+func remove():
+	get_tree().queue_delete(self)
+	pass
 
 
 
