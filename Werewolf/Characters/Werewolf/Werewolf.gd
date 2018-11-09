@@ -9,7 +9,7 @@ var vertax = 0
 
 var axis = 0
 
-var speed = 5
+var speed = 20
 
 var attacking = false
 var transforming = false
@@ -24,6 +24,7 @@ func _ready():
 	$AttackTimer.connect("timeout", self, "on_attack_end")
 	$TransformTimer.connect("timeout", self, "on_transform_end")
 	$LifeTimer.connect("timeout", self, "on_life_timeout")
+	$InputTimer.connect("timeout", self, "on_attack_input_end")
 	pass
 
 func _physics_process(delta):
@@ -32,10 +33,7 @@ func _physics_process(delta):
 	find_direction_axis()
 	wolf_life()
 	death()
-	if Input.is_action_just_pressed("fire"):
-		attack()
-		manage_animation()
-	
+	attack_input()
 	pass
 
 func wolf_life():
@@ -43,7 +41,7 @@ func wolf_life():
 		if !life_changing:
 			life_changing = true
 			$LifeTimer.start()
-			$Camera2D/UI/HUD/ProgressBar.value = life
+			$Camera2D/UI/LifeHUD.frame = 100 - life
 	else:
 		$LifeTimer.stop()
 	pass
@@ -162,15 +160,28 @@ func find_direction_axis():
 		set_axis(0)
 	
 	if $Camera2D/UI/PlayerControl.auto_enabled:
-		speed = 5
-	else:
 		speed = 20
+	else:
+		speed = 30
 	pass
 
 func attack():
-	if !human:
+	if !human && !attacking:
 		attacking = true
 		$AttackTimer.start()
+	pass
+
+func attack_input():
+	if Input.is_action_just_pressed("click"):
+		$Camera2D/UI/InputArea.position = get_local_mouse_position()
+		$InputTimer.start()
+	if $Camera2D/UI/InputArea.overlaps_area($Camera2D/UI/AttackArea):
+		attack()
+		manage_animation()
+	pass
+
+func on_attack_input_end():
+	$Camera2D/UI/InputArea.position = $Camera2D/UI/PlayerControl.position + Vector2(0, 500)
 	pass
 
 func on_attack_end():
@@ -178,19 +189,18 @@ func on_attack_end():
 	manage_animation()
 	if $RayCast2D.get_collider() != null:
 			enemy = $RayCast2D.get_collider().get_instance_id()
-			print(enemy)
 	pass
 
 func on_transform_end():
 	transforming = false
 	if human:
 		human = false
-		$Camera2D/UI/HUD.set_visible(true)
+		$Camera2D/UI/LifeHUD.set_visible(true)
 		manage_animation()
 	else:
 		moonlight.detect_enabled = true
 		human = true
-		$Camera2D/UI/HUD.set_visible(false)
+		$Camera2D/UI/LifeHUD.set_visible(false)
 		manage_animation()
 	pass
 

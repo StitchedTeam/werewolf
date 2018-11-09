@@ -1,9 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Characters/Werewolf/Werewolf.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/Lobo Sprite Sheet (2).png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerControl.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Resources/main_theme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Sprites/Placeholder/UI/LifeBar.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Placeholder/New Piskel (2).png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -42,6 +42,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("RayCast2D:cast_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 20 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 7 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RayCast2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -72,6 +108,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 24, 25, 26, 28 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RayCast2D:cast_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RayCast2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -104,6 +176,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 24, 25, 26, 28 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("RayCast2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RayCast2D:cast_to")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RayCast2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -134,6 +242,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RayCast2D:cast_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RayCast2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -617,7 +761,7 @@ tracks/1/keys = {
 "values": [ 12, 13, 14, 15 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RayCast2D:position")
+tracks/2/path = NodePath("HumanCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -626,10 +770,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 7 ) ]
+"values": [ Vector2( 0, 3 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("RayCast2D:cast_to")
+tracks/3/path = NodePath("HumanCollider:shape:radius")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -638,10 +782,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 20 ) ]
+"values": [ 7.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HumanCollider:position")
+tracks/4/path = NodePath("HumanCollider:shape:height")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -650,10 +794,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 3 ) ]
+"values": [ 24.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HumanCollider:shape:radius")
+tracks/5/path = NodePath("RayCast2D:enabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -661,20 +805,8 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 7.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("HumanCollider:shape:height")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 24.0 ]
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -770,10 +902,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RayCast2D:cast_to")
+tracks/1/path = NodePath("HumanSpritesheet:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -781,23 +913,23 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -20, 0 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RayCast2D:position")
+tracks/2/path = NodePath("HumanSpritesheet:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HumanSpritesheet:flip_h")
+tracks/3/path = NodePath("HumanCollider:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -805,52 +937,28 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HumanSpritesheet:frame")
+tracks/4/path = NodePath("HumanCollider:shape:height")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 6, 7, 8, 9 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("HumanCollider:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 3 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("HumanCollider:shape:height")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 24.0 ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("HumanCollider:shape:radius")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("HumanCollider:shape:radius")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -872,10 +980,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RayCast2D:position")
+tracks/1/path = NodePath("HumanSpritesheet:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -883,23 +991,23 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"update": 1,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RayCast2D:cast_to")
+tracks/2/path = NodePath("HumanSpritesheet:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 20, 0 ) ]
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HumanSpritesheet:flip_h")
+tracks/3/path = NodePath("HumanCollider:shape:radius")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -907,52 +1015,28 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ 7.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HumanSpritesheet:frame")
+tracks/4/path = NodePath("HumanCollider:shape:height")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 6, 7, 8, 9 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("HumanCollider:shape:radius")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 7.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("HumanCollider:shape:height")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 24.0 ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("HumanCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("HumanCollider:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -989,7 +1073,7 @@ tracks/1/keys = {
 "values": [ 18, 19, 20, 21 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RayCast2D:cast_to")
+tracks/2/path = NodePath("HumanCollider:shape:radius")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -998,10 +1082,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -20 ) ]
+"values": [ 7.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("RayCast2D:position")
+tracks/3/path = NodePath("HumanCollider:shape:height")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1010,10 +1094,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -4 ) ]
+"values": [ 24.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HumanCollider:shape:radius")
+tracks/4/path = NodePath("HumanCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1022,10 +1106,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 7.0 ]
+"values": [ Vector2( 0, 3 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HumanCollider:shape:height")
+tracks/5/path = NodePath("RayCast2D:enabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1033,21 +1117,19 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 24.0 ]
+"update": 1,
+"values": [ false ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("HumanCollider:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 3 ) ]
-}
+
+[sub_resource type="RectangleShape2D" id=18]
+
+custom_solver_bias = 0.0
+extents = Vector2( 91, 85 )
+
+[sub_resource type="CircleShape2D" id=19]
+
+custom_solver_bias = 0.0
+radius = 10.0
 
 [node name="Werewolf" type="KinematicBody2D"]
 input_pickable = false
@@ -1062,10 +1144,9 @@ __meta__ = {
 
 [node name="HumanSpritesheet" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-flip_h = true
 vframes = 11
 hframes = 6
-frame = 8
+frame = 40
 
 [node name="HumanCollider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3 )
@@ -1096,6 +1177,7 @@ anims/WolfUp = SubResource( 17 )
 blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 anchor_mode = 1
 rotating = false
 current = true
@@ -1126,49 +1208,47 @@ z_index = 1
 position = Vector2( 120, 40 )
 z_index = 1
 
-[node name="HUD" type="Control" parent="Camera2D/UI"]
-editor/display_folded = true
+[node name="LifeHUD" type="Sprite" parent="Camera2D/UI"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+position = Vector2( 121, -96 )
+texture = ExtResource( 4 )
+vframes = 11
+hframes = 10
+_sections_unfolded = [ "Animation" ]
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/UI/HUD"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 56.0
-margin_top = -105.0
-margin_right = 188.0
-margin_bottom = -91.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme = ExtResource( 4 )
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 100.0
-exp_edit = false
-rounded = false
-allow_greater = false
-allow_lesser = false
-percent_visible = false
+[node name="AttackArea" type="Area2D" parent="Camera2D/UI"]
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 4
+collision_mask = 4
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/AttackArea"]
+position = Vector2( -43, -4 )
+shape = SubResource( 18 )
+
+[node name="InputArea" type="Area2D" parent="Camera2D/UI"]
+editor/display_folded = true
+position = Vector2( 95, -53 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 4
+collision_mask = 4
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/InputArea"]
+shape = SubResource( 19 )
 
 [node name="LoadingScreen" type="Sprite" parent="Camera2D"]
 visible = false
@@ -1191,6 +1271,12 @@ wait_time = 0.4
 one_shot = true
 autostart = false
 
+[node name="InputTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 0.2
+one_shot = true
+autostart = false
+
 [node name="LifeTimer" type="Timer" parent="."]
 process_mode = 1
 wait_time = 1.0
@@ -1198,8 +1284,10 @@ one_shot = true
 autostart = false
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, -4 )
 enabled = true
 exclude_parent = true
-cast_to = Vector2( -20, 0 )
+cast_to = Vector2( 0, -20 )
 collision_mask = 2
+_sections_unfolded = [ "Transform" ]
 
