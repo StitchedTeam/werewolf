@@ -115,3 +115,6 @@ func check_if_object(coll_object):
 		else: return false
 	pass
 
+func transforming():
+	$AnimationPlayer.play("Transform")
+	pass

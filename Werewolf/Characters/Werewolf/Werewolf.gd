@@ -86,6 +86,7 @@ func manage_animation():
 
 func switch_human():
 	transforming = true
+	moonlight.transforming()
 	$AnimationPlayer.play("Transform")
 	$TransformTimer.start()
 	pass
