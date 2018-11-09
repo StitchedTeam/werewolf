@@ -18,6 +18,7 @@ var life = GameGlobals.life
 var life_changing = false
 
 var game_over = false
+var moonlight
 
 func _ready():
 	$AttackTimer.connect("timeout", self, "on_attack_end")
@@ -186,7 +187,9 @@ func on_transform_end():
 		$Camera2D/UI/HUD.set_visible(true)
 		manage_animation()
 	else:
+		moonlight.detect_enabled = true
 		human = true
+		$Camera2D/UI/HUD.set_visible(false)
 		manage_animation()
 	pass
 

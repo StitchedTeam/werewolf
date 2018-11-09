@@ -36,6 +36,7 @@ func walklight():
 	pass
 
 func loading():
+	$Werewolf.moonlight = $Moonlight
 	$Enemies/GenericEnemy.player = $Werewolf
 	$Enemies/GenericEnemy2.player = $Werewolf
 	$Enemies/GenericEnemy3.player = $Werewolf

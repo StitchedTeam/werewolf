@@ -45,6 +45,7 @@ run_state_offset = 400
 area = 1
 
 [node name="Shepherds" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Shepherd" parent="Shepherds" instance=ExtResource( 6 )]
 position = Vector2( 264, 146.586 )

@@ -23,7 +23,7 @@ func die():
 		if church:
 			$StaticBody2D/CollisionShape2D.set_disabled(true)
 			if overlaps_body(player):
-				print("Aaa")
+				player.on_transform_end()
 				$Sprite.frame = 1
 				church = false
 				GameGlobals.church_exists.erase(String(area))
