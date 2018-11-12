@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Tilesets/background.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Tilesets/houses.tres" type="TileSet" id=2]
+[ext_resource path="res://Resources/Tilesets/Elements.tres" type="TileSet" id=3]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -61,6 +62,26 @@ _sections_unfolded = [ "Cell", "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="UpElements" type="TileMap" parent="."]
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 8
+collision_mask = 8
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262130, 19, 0, -196606, 21, 0, -65525, 20, 0, 196608, 0, 0, 196611, 11, 0, 196630, 10, 0, 262153, 5, 0, 262164, 19, 0, 327684, 20, 0, 327689, 21, 0, 327691, 15, 0, 458764, 19, 0, 458774, 18, 0, 524290, 21, 0, 786432, 3, 0, 851990, 3, 0, 983042, 12, 0, 983048, 10, 0, 983049, 1, 0, 983053, 11, 0, 983061, 10, 0, 983063, 11, 0, 1114123, 15, 0 )
+_sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="LightOccluding" type="Node2D" parent="."]
 editor/display_folded = true
