@@ -2,6 +2,8 @@ extends Node
 
 var dir = 1
 
+var light_speed = 0
+
 func _ready():
 	$Werewolf/AnimationPlayer.play("Loading")
 	loading()
@@ -20,17 +22,22 @@ func light_transform():
 	pass
 
 func walklight():
+	if $Werewolf.axis == 0:
+		light_speed = 0.1
+	else:
+		light_speed = 0.3
+	
 	$Moonlight.position.y = $Werewolf.position.y - 300
-	var max_x = $Werewolf.position.x + 50
-	var min_x = $Werewolf.position.x - 50
+	var max_x = $Werewolf.position.x + 40
+	var min_x = $Werewolf.position.x - 40
 	if dir == 1:
 		if $Moonlight.position.x < max_x:
-			$Moonlight.position.x += 0.1
+			$Moonlight.position.x += light_speed
 		elif $Moonlight.position.x >= max_x:
 			dir = -1
 	elif dir == -1:
 		if $Moonlight.position.x > min_x:
-			$Moonlight.position.x -= 0.1
+			$Moonlight.position.x -= light_speed
 		elif $Moonlight.position.x <= min_x:
 			dir = 1
 	pass
