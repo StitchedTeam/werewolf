@@ -34,6 +34,7 @@ func _physics_process(delta):
 	wolf_life()
 	death()
 	attack_input()
+	
 	pass
 
 func wolf_life():
@@ -43,6 +44,7 @@ func wolf_life():
 			$LifeTimer.start()
 			$Camera2D/UI/LifeHUD.frame = 100 - life
 	else:
+		life_changing = false
 		$LifeTimer.stop()
 	pass
 
@@ -160,9 +162,9 @@ func find_direction_axis():
 		set_axis(0)
 	
 	if $Camera2D/UI/PlayerControl.auto_enabled:
-		speed = 20
+		speed = 40
 	else:
-		speed = 30
+		speed = 50
 	pass
 
 func attack():
