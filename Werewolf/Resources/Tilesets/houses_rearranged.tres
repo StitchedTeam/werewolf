@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Sprites/Scenario/houses_rearranged.png" type="Texture" id=1]
+
+[resource]
+
+0/name = "Sprite"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1000, 750 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 173, Vector2( 0, 1 ), 506, Vector2( 0, 2 ), 320, Vector2( 0, 5 ), 5, Vector2( 0, 6 ), 320, Vector2( 0, 7 ), 5, Vector2( 1, 0 ), 181, Vector2( 1, 1 ), 506, Vector2( 1, 2 ), 320, Vector2( 1, 5 ), 5, Vector2( 1, 6 ), 320, Vector2( 1, 7 ), 5, Vector2( 2, 0 ), 149, Vector2( 2, 1 ), 506, Vector2( 2, 2 ), 320, Vector2( 2, 5 ), 5, Vector2( 2, 6 ), 320, Vector2( 2, 7 ), 5, Vector2( 3, 0 ), 173, Vector2( 3, 1 ), 506, Vector2( 3, 2 ), 320, Vector2( 3, 5 ), 5, Vector2( 3, 6 ), 320, Vector2( 3, 7 ), 5, Vector2( 4, 0 ), 181, Vector2( 4, 1 ), 506, Vector2( 4, 2 ), 320, Vector2( 4, 5 ), 5, Vector2( 4, 6 ), 320, Vector2( 4, 7 ), 5, Vector2( 5, 0 ), 189, Vector2( 5, 1 ), 506, Vector2( 5, 2 ), 320, Vector2( 5, 5 ), 5, Vector2( 5, 6 ), 320, Vector2( 6, 0 ), 189, Vector2( 6, 1 ), 506, Vector2( 6, 2 ), 320, Vector2( 6, 5 ), 5, Vector2( 6, 6 ), 64, Vector2( 7, 0 ), 189, Vector2( 7, 1 ), 506, Vector2( 7, 2 ), 320, Vector2( 7, 5 ), 5, Vector2( 7, 6 ), 64, Vector2( 8, 0 ), 61, Vector2( 8, 1 ), 506, Vector2( 8, 2 ), 320, Vector2( 8, 5 ), 5, Vector2( 8, 6 ), 320, Vector2( 9, 0 ), 189, Vector2( 9, 1 ), 504, Vector2( 9, 2 ), 320, Vector2( 9, 5 ), 5, Vector2( 9, 6 ), 256, Vector2( 10, 0 ), 189, Vector2( 10, 1 ), 504, Vector2( 10, 2 ), 320, Vector2( 10, 5 ), 5, Vector2( 10, 6 ), 320, Vector2( 11, 0 ), 188, Vector2( 11, 1 ), 504, Vector2( 11, 2 ), 320, Vector2( 11, 5 ), 5, Vector2( 11, 6 ), 320, Vector2( 12, 0 ), 189, Vector2( 12, 1 ), 504, Vector2( 12, 2 ), 320, Vector2( 12, 5 ), 5, Vector2( 12, 6 ), 320, Vector2( 13, 0 ), 189, Vector2( 13, 1 ), 510, Vector2( 13, 2 ), 320, Vector2( 13, 5 ), 5, Vector2( 13, 6 ), 320, Vector2( 14, 0 ), 189, Vector2( 14, 1 ), 506, Vector2( 14, 2 ), 320, Vector2( 14, 5 ), 5, Vector2( 14, 6 ), 320 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+_sections_unfolded = [ "0", "0/texture" ]
+

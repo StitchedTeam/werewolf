@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Sprites/Scenario/GroundSet.png" type="Texture" id=1]
+
+[node name="GroundAutotile" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 9
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 192, 64 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 10
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 192, 128 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 11
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 192, 192 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 12
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 192, 256 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 13
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 256, 0 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 14
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+
+[node name="Sprite8" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+texture = ExtResource( 1 )
+centered = false
+vframes = 5
+hframes = 3
+frame = 7
+_sections_unfolded = [ "Animation", "Offset", "texture" ]
+

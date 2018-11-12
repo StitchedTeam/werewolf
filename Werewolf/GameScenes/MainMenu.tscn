@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameScenes/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/UI/MenuDlaceholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button_pressed.png" type="Texture" id=4]
 [ext_resource path="res://Resources/main_theme.tres" type="Theme" id=5]
@@ -12,8 +12,25 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 384, 216 )
+region_rect = Rect2( 0, 0, 385, 217 )
 margin_left = 0.0
 margin_right = 0.0
 margin_top = 0.0
@@ -48,7 +65,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 1 )
+custom_styles/panelf = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+_sections_unfolded = [ "Custom Styles" ]
 __meta__ = {
 "_edit_lock_": true
 }

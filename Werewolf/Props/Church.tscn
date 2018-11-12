@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Props/Church.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Placeholder/New Piskel (1).png" type="Texture" id=2]
@@ -12,6 +12,13 @@ extents = Vector2( 16, 16 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = false
+cull_mode = 0
+polygon = PoolVector2Array( -16, 16, -16, -16, 16, -16, 16, 16 )
+_sections_unfolded = [ "polygon" ]
 
 [node name="Church" type="Area2D"]
 input_pickable = true
@@ -43,4 +50,9 @@ physics_material_override = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
+light_mask = 1
+_sections_unfolded = [ "occluder" ]
 

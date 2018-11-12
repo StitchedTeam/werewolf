@@ -3,6 +3,7 @@ extends Node2D
 var detect_enabled = true
 
 func _ready():
+	
 	pass
 
 func _process(delta):
@@ -118,3 +119,17 @@ func check_if_object(coll_object):
 func transforming():
 	$AnimationPlayer.play("Transform")
 	pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
