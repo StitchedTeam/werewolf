@@ -35,14 +35,24 @@ func _process(delta):
 	pass
 
 func manage_animation():
-	if dir_x == 1:
-		if anim != 1:
-			$AnimationPlayer.play("Right")
-			anim = 1
-	elif dir_x == -1:
-		if anim != -1:
-			$AnimationPlayer.play("Left")
-			anim = -1
+	if !vertical_move_enabled:
+		if dir_x == 1:
+			if anim != 1:
+				$AnimationPlayer.play("Right")
+				anim = 1
+		elif dir_x == -1:
+			if anim != -1:
+				$AnimationPlayer.play("Left")
+				anim = -1
+	else:
+		if dir_y == 1:
+			if anim != 2:
+				$AnimationPlayer.play("Down")
+				anim = 2
+		elif dir_y == -1:
+			if anim != -2:
+				$AnimationPlayer.play("Up")
+				anim = -2
 	pass
 
 func manage_state():
@@ -132,6 +142,7 @@ func run():
 	
 	if !$RayCast2DCollUp.is_colliding() && !$RayCast2DCollDown.is_colliding():
 		vertical_move_enabled = false
+		dir_y_setted = false
 	
 	if position.distance_to(player.position) >= run_state_offset:
 		state = 0
@@ -165,11 +176,11 @@ func loading():
 
 func load_spritesheet():
 	if character_spritesheet == 0:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy1.png")
+		$Sprite.texture = load("res://Assets/Sprites/Characters/all_animations/8YfFIUja.png")
 	elif character_spritesheet == 1:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy2.png")
+		$Sprite.texture = load("res://Assets/Sprites/Characters/all_animations/dIqzNajh.png")
 	elif character_spritesheet == 2:
-		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_00.png")
+		$Sprite.texture = load("res://Assets/Sprites/Characters/all_animations/gR2cdusq.png")
 	elif character_spritesheet == 3:
 		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_01.png")
 	elif character_spritesheet == 4:
