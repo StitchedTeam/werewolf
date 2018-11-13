@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/Shepherd/Shepherd.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/all_animations/wd9oKdK1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1) (1).png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -405,11 +405,12 @@ scale_random = 0.0
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
-anim_speed = 0.0
+anim_speed = 4.0
 anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+_sections_unfolded = [ "Animation" ]
 
 [node name="Shepherd" type="Node2D"]
 position = Vector2( 110, 68 )
@@ -481,7 +482,7 @@ autostart = false
 
 [node name="DeathParticles" type="Particles2D" parent="."]
 emitting = false
-amount = 5
+amount = 8
 lifetime = 0.5
 one_shot = true
 preprocess = 0.0
@@ -496,6 +497,7 @@ draw_order = 0
 process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 normal_map = null
-h_frames = 1
-v_frames = 1
+h_frames = 2
+v_frames = 2
+_sections_unfolded = [ "Textures" ]
 

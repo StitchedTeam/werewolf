@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Characters/Enemies/GenericEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/all_animations/8YfFIUja.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1).png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (3).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1) (1).png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -228,7 +228,7 @@ tracks/1/keys = {
 render_priority = 0
 trail_divisor = 1
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 40.0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -256,11 +256,12 @@ scale_random = 0.0
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
-anim_speed = 0.0
+anim_speed = 12.0
 anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+_sections_unfolded = [ "Emission Shape" ]
 
 [sub_resource type="ParticlesMaterial" id=6]
 
@@ -295,11 +296,12 @@ scale_random = 0.0
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
-anim_speed = 0.0
+anim_speed = 2.0
 anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+_sections_unfolded = [ "Animation" ]
 
 [sub_resource type="CapsuleShape2D" id=7]
 
@@ -375,11 +377,11 @@ one_shot = true
 autostart = false
 
 [node name="ScaredParticles" type="Particles2D" parent="."]
-position = Vector2( 0, -18 )
+position = Vector2( -0.349655, 0.181755 )
 emitting = false
-amount = 3
-lifetime = 2.0
-one_shot = false
+amount = 4
+lifetime = 1.0
+one_shot = true
 preprocess = 0.0
 speed_scale = 1.0
 explosiveness = 0.0
@@ -392,12 +394,13 @@ draw_order = 0
 process_material = SubResource( 5 )
 texture = ExtResource( 3 )
 normal_map = null
-h_frames = 1
-v_frames = 1
+h_frames = 2
+v_frames = 2
+_sections_unfolded = [ "Process Material", "Time", "process_material" ]
 
 [node name="DeathParticles" type="Particles2D" parent="."]
 emitting = false
-amount = 5
+amount = 10
 lifetime = 0.5
 one_shot = true
 preprocess = 0.0
@@ -412,8 +415,9 @@ draw_order = 0
 process_material = SubResource( 6 )
 texture = ExtResource( 4 )
 normal_map = null
-h_frames = 1
-v_frames = 1
+h_frames = 2
+v_frames = 2
+_sections_unfolded = [ "Time", "process_material" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
