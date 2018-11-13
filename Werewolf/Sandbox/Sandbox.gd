@@ -7,7 +7,8 @@ var light_speed = 0
 func _ready():
 	$Werewolf/AnimationPlayer.play("Loading")
 	loading()
-	$Werewolf/AnimationPlayer.play("HumanIdle")
+	
+	
 	pass 
 
 func _process(delta):
@@ -74,4 +75,5 @@ func loading():
 	$Churches/Church3.player = $Werewolf
 	$Churches/Church4.player = $Werewolf
 	$Churches/Church5.player = $Werewolf
+	$Werewolf/AnimationPlayer.play("HumanIdle")
 	pass

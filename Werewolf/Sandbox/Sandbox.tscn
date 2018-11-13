@@ -20,6 +20,7 @@ position = Vector2( 404, 203 )
 position = Vector2( 246, -216.659 )
 
 [node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="GenericEnemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 576, 408 )
@@ -160,7 +161,6 @@ patrol_offset = 45
 area = 5
 
 [node name="Churches" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Church1" parent="Churches" instance=ExtResource( 7 )]
 position = Vector2( 606, 16 )

@@ -110,7 +110,6 @@ func damage():
 func death_animation_end():
 	GameGlobals.priest_alive.erase(String(area))
 	GameGlobals.save(GameGlobals.build_save())
-	print(GameGlobals.priest_alive)
 	GameGlobals.life += 20
 	remove()
 	pass

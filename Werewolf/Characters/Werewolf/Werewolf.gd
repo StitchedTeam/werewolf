@@ -25,6 +25,7 @@ func _ready():
 	$TransformTimer.connect("timeout", self, "on_transform_end")
 	$LifeTimer.connect("timeout", self, "on_life_timeout")
 	$InputTimer.connect("timeout", self, "on_attack_input_end")
+	$BackShapeshiftTimer.connect("timeout", self, "on_shapeshifted_back")
 	pass
 
 func _physics_process(delta):
@@ -200,7 +201,8 @@ func on_transform_end():
 		$Camera2D/UI/LifeHUD.set_visible(true)
 		manage_animation()
 	else:
-		moonlight.detect_enabled = true
+		moonlight.back_shifting()
+		$BackShapeshiftTimer.start()
 		human = true
 		$Camera2D/UI/LifeHUD.set_visible(false)
 		manage_animation()
@@ -218,7 +220,9 @@ func death():
 		GameGlobals.reset_save()
 	pass
 
-
+func on_shapeshifted_back():
+	moonlight.detect_enabled = true
+	pass
 
 
 
