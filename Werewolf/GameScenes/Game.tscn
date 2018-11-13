@@ -1,12 +1,36 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GameScenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Sandbox/Sandbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sprites/Placeholder/sprite_0.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/Placeholder/sprite_1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_background.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/Placeholder/Menu/menu_button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/pause0.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/UI/pause1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/UI/MenuBG.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/UI/button0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/UI/button1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/Pixel Musketeer.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Sprites/UI/MenuDlaceholder.png" type="Texture" id=9]
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 396, 252 )
+
+[sub_resource type="DynamicFont" id=1]
+
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 385, 217 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 385, 217 )
 
 [node name="Game" type="Node"]
 pause_mode = 2
@@ -16,667 +40,281 @@ script = ExtResource( 1 )
 pause_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="PauseButton" type="TextureButton" parent="CanvasLayer/UI"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
 
 [node name="PauseScreen" type="Control" parent="CanvasLayer/UI"]
-editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/UI/PauseScreen"]
-texture = ExtResource( 5 )
-centered = false
+[node name="Panel" type="Panel" parent="CanvasLayer/UI/PauseScreen"]
+margin_right = 384.0
+margin_bottom = 216.0
+custom_styles/panelf = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="ResumeButton" type="TextureButton" parent="CanvasLayer/UI/PauseScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 84.0
-margin_top = 86.0
-margin_right = 207.0
-margin_bottom = 116.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 10.0
+margin_top = 12.0
+margin_right = 133.0
+margin_bottom = 42.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="ResumeText" type="Label" parent="CanvasLayer/UI/PauseScreen/ResumeButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_left = 40.0
+margin_top = 6.0
+margin_right = 92.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
 text = "Resume"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="OptionsButton" type="TextureButton" parent="CanvasLayer/UI/PauseScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 84.0
-margin_top = 129.0
-margin_right = 207.0
-margin_bottom = 159.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 133.0
+margin_bottom = 80.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="OptionsText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 8.0
+margin_left = 36.0
+margin_top = 6.0
 margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
 text = "Options"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/UI/PauseScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 85.0
-margin_top = 172.0
-margin_right = 208.0
-margin_bottom = 202.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 10.0
+margin_top = 87.0
+margin_right = 133.0
+margin_bottom = 117.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="MainMenuText" type="Label" parent="CanvasLayer/UI/PauseScreen/MainMenuButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_left = 28.0
+margin_top = 6.0
+margin_right = 102.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
 text = "Main Menu"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="OptionsScreen" type="Control" parent="CanvasLayer/UI/PauseScreen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="OptionsText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsScreen"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 20.0
-margin_top = 30.0
+margin_top = 16.0
 margin_right = 71.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
 text = "Options"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="MusicVolume" type="HSlider" parent="CanvasLayer/UI/PauseScreen/OptionsScreen"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 70.0
-margin_right = 370.0
-margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-allow_greater = false
-allow_lesser = false
-editable = true
-scrollable = true
-tick_count = 0
+margin_left = 20.0
+margin_top = 72.0
+margin_right = 140.0
+margin_bottom = 88.0
 ticks_on_borders = false
-focus_mode = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="MusicVolumeText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsScreen/MusicVolume"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -20.0
 margin_right = 40.0
 margin_bottom = -6.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
 text = "Music volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="SFXVolume" type="HSlider" parent="CanvasLayer/UI/PauseScreen/OptionsScreen"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 120.0
-margin_right = 370.0
-margin_bottom = 136.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-allow_greater = false
-allow_lesser = false
-editable = true
-scrollable = true
-tick_count = 0
+margin_left = 20.0
+margin_top = 122.0
+margin_right = 140.0
+margin_bottom = 138.0
 ticks_on_borders = false
-focus_mode = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="SFXVolumeText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsScreen/SFXVolume"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -20.0
 margin_right = 40.0
 margin_bottom = -6.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
 text = "SFX Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="ButtonsPlace" type="CheckButton" parent="CanvasLayer/UI/PauseScreen/OptionsScreen"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 120.0
-margin_right = 86.0
-margin_bottom = 160.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ButtonsPlaceText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsScreen/ButtonsPlace"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = -18.0
-margin_right = 135.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Controls placement"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Back" type="TextureButton" parent="CanvasLayer/UI/PauseScreen/OptionsScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 246.0
-margin_top = 166.0
-margin_right = 369.0
-margin_bottom = 196.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 249.0
+margin_top = 177.0
+margin_right = 377.0
+margin_bottom = 209.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="BackText" type="Label" parent="CanvasLayer/UI/PauseScreen/OptionsScreen/Back"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_left = 39.0
+margin_top = 5.0
+margin_right = 91.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
 text = "Back
 "
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="MainMenuScreen" type="Control" parent="CanvasLayer/UI/PauseScreen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="YesButton" type="TextureButton" parent="CanvasLayer/UI/PauseScreen/MainMenuScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 62.0
-margin_top = 124.0
-margin_right = 185.0
-margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 36.0
+margin_top = 92.0
+margin_right = 159.0
+margin_bottom = 122.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="YesText" type="Label" parent="CanvasLayer/UI/PauseScreen/MainMenuScreen/YesButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 38.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
 text = "Yes
 "
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="NoButton" type="TextureButton" parent="CanvasLayer/UI/PauseScreen/MainMenuScreen"]
 pause_mode = 2
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 197.0
-margin_top = 124.0
-margin_right = 320.0
-margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 36.0
+margin_top = 132.0
+margin_right = 159.0
+margin_bottom = 162.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="NoText" type="Label" parent="CanvasLayer/UI/PauseScreen/MainMenuScreen/NoButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_left = 39.0
+margin_top = 6.0
+margin_right = 91.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
 text = "No
 "
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="SecurityQuestion" type="Label" parent="CanvasLayer/UI/PauseScreen/MainMenuScreen"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 36.0
-margin_top = 53.0
-margin_right = 361.0
-margin_bottom = 67.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Are you sure you want to head back to Main Menu?"
+margin_left = 33.0
+margin_top = 32.0
+margin_right = 358.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 1 )
+text = "Are you sure you want to head 
+back to Main Menu?"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="GameOverScreen" type="Control" parent="CanvasLayer/UI"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/UI/GameOverScreen"]
-position = Vector2( 191, 108 )
-texture = ExtResource( 5 )
+[node name="Panel" type="Panel" parent="CanvasLayer/UI/GameOverScreen"]
+margin_right = 384.0
+margin_bottom = 216.0
+custom_styles/panelf = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
 
 [node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/UI/GameOverScreen"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 130.0
-margin_top = 151.0
-margin_right = 253.0
-margin_bottom = 181.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+margin_left = 77.0
+margin_top = 118.0
+margin_right = 200.0
+margin_bottom = 148.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="MainMenuText" type="Label" parent="CanvasLayer/UI/GameOverScreen/MainMenuButton"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 30.0
-margin_top = 8.0
+margin_left = 27.0
+margin_top = 6.0
 margin_right = 101.0
-margin_bottom = 22.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
 text = "Main Menu"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="GameOverText" type="Label" parent="CanvasLayer/UI/GameOverScreen"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 83.0
-margin_right = 233.0
-margin_bottom = 97.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+margin_left = 30.0
+margin_top = 19.0
+margin_right = 107.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0627451, 0, 0.501961, 1 )
 text = "Game Over"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 

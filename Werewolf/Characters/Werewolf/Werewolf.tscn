@@ -8,7 +8,6 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-custom_solver_bias = 0.0
 radius = 7.0
 height = 24.0
 
@@ -16,8 +15,6 @@ height = 24.0
 
 resource_name = "AttackDown"
 length = 0.4
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -83,8 +80,6 @@ tracks/4/keys = {
 
 resource_name = "AttackLeft"
 length = 0.4
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:flip_h")
 tracks/0/interp = 1
@@ -150,8 +145,6 @@ tracks/4/keys = {
 
 resource_name = "AttackRight"
 length = 0.4
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:flip_h")
 tracks/0/interp = 1
@@ -217,8 +210,6 @@ tracks/4/keys = {
 
 resource_name = "AttackUp"
 length = 0.4
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -284,7 +275,6 @@ tracks/4/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -362,7 +352,6 @@ tracks/5/keys = {
 
 length = 4.0
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -452,7 +441,6 @@ tracks/6/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -530,7 +518,6 @@ tracks/5/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -608,7 +595,6 @@ tracks/5/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -687,7 +673,6 @@ tracks/5/keys = {
 resource_name = "Loading"
 length = 2.0
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D/LoadingScreen:visible")
 tracks/0/interp = 1
@@ -716,8 +701,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=12]
 
 length = 1.8
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:frame")
 tracks/0/interp = 1
@@ -735,7 +718,6 @@ tracks/0/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:flip_h")
 tracks/0/interp = 1
@@ -813,7 +795,6 @@ tracks/5/keys = {
 
 length = 4.0
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("RayCast2D:enabled")
 tracks/0/interp = 1
@@ -891,7 +872,6 @@ tracks/5/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("RayCast2D:enabled")
 tracks/0/interp = 1
@@ -969,7 +949,6 @@ tracks/5/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("RayCast2D:enabled")
 tracks/0/interp = 1
@@ -1047,7 +1026,6 @@ tracks/5/keys = {
 
 length = 0.8
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("HumanSpritesheet:flip_h")
 tracks/0/interp = 1
@@ -1123,22 +1101,15 @@ tracks/5/keys = {
 
 [sub_resource type="RectangleShape2D" id=18]
 
-custom_solver_bias = 0.0
 extents = Vector2( 91, 85 )
 
 [sub_resource type="CircleShape2D" id=19]
 
-custom_solver_bias = 0.0
-radius = 10.0
 
 [node name="Werewolf" type="KinematicBody2D"]
-input_pickable = false
 collision_layer = 524297
 collision_mask = 524297
-collision/safe_margin = 0.08
-motion/sync_to_physics = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -1154,11 +1125,6 @@ position = Vector2( 0, 3 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
 anims/AttackDown = SubResource( 2 )
 anims/AttackLeft = SubResource( 3 )
 anims/AttackRight = SubResource( 4 )
@@ -1175,31 +1141,11 @@ anims/WolfIdle = SubResource( 14 )
 anims/WolfLeft = SubResource( 15 )
 anims/WolfRight = SubResource( 16 )
 anims/WolfUp = SubResource( 17 )
-blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 1
-rotating = false
 current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
 
 [node name="UI" type="Node2D" parent="Camera2D"]
 z_index = 1
@@ -1214,20 +1160,11 @@ position = Vector2( 121, -96 )
 texture = ExtResource( 4 )
 vframes = 11
 hframes = 10
-_sections_unfolded = [ "Animation" ]
 
 [node name="AttackArea" type="Area2D" parent="Camera2D/UI"]
 editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 4
 collision_mask = 4
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/AttackArea"]
 position = Vector2( -43, -4 )
@@ -1236,39 +1173,18 @@ shape = SubResource( 18 )
 [node name="InputArea" type="Area2D" parent="Camera2D/UI"]
 editor/display_folded = true
 position = Vector2( 95, -53 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 4
 collision_mask = 4
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/InputArea"]
 shape = SubResource( 19 )
 
 [node name="AreaLabel" type="Label" parent="Camera2D/UI"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = -67.0
 margin_top = -104.0
 margin_right = 29.0
 margin_bottom = -90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "People around: "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="LoadingScreen" type="Sprite" parent="Camera2D"]
 visible = false
@@ -1280,40 +1196,27 @@ vframes = 2
 hframes = 2
 
 [node name="TransformTimer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 0.8
 one_shot = true
-autostart = false
 
 [node name="AttackTimer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 0.4
 one_shot = true
-autostart = false
 
 [node name="InputTimer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 0.2
 one_shot = true
-autostart = false
 
 [node name="LifeTimer" type="Timer" parent="."]
-process_mode = 1
-wait_time = 1.0
 one_shot = true
-autostart = false
 
 [node name="BackShapeshiftTimer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 5.0
 one_shot = true
-autostart = false
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 0, -4 )
 enabled = true
-exclude_parent = true
 cast_to = Vector2( 0, -20 )
 collision_mask = 2
-_sections_unfolded = [ "Transform" ]
 
