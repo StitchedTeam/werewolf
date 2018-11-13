@@ -149,6 +149,7 @@ func damage():
 func death_animation_end():
 	GameGlobals.life += 10
 	GameGlobals.enemies_alive[String(area)] -= 1
+	player.update_area()
 	get_tree().queue_delete(self)
 	pass
 

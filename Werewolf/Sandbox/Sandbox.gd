@@ -7,13 +7,12 @@ var light_speed = 0
 func _ready():
 	$Werewolf/AnimationPlayer.play("Loading")
 	loading()
-	
-	
 	pass 
 
 func _process(delta):
 	light_transform()
 	walklight()
+	player_area()
 	pass
 
 func light_transform():
@@ -41,6 +40,32 @@ func walklight():
 			$Moonlight.position.x -= light_speed
 		elif $Moonlight.position.x <= min_x:
 			dir = 1
+	pass
+
+func player_area():
+	if $Areas/Area1.overlaps_body($Werewolf):
+		if $Werewolf.area != 1:
+			$Werewolf.area = 1
+			$Werewolf.update_area()
+	elif $Areas/Area2.overlaps_body($Werewolf):
+		if $Werewolf.area != 2:
+			$Werewolf.area = 2
+			$Werewolf.update_area()
+	elif $Areas/Area3.overlaps_body($Werewolf):
+		if $Werewolf.area != 3:
+			$Werewolf.area = 3
+			$Werewolf.update_area()
+	elif $Areas/Area4.overlaps_body($Werewolf):
+		if $Werewolf.area != 4:
+			$Werewolf.area = 4
+			$Werewolf.update_area()
+	elif $Areas/Area5.overlaps_body($Werewolf):
+		if $Werewolf.area != 5:
+			$Werewolf.area = 5
+			$Werewolf.update_area()
+	else: if $Werewolf.area != 0:
+		$Werewolf.area = 0
+		$Werewolf.update_area()
 	pass
 
 func loading():

@@ -1133,8 +1133,8 @@ radius = 10.0
 
 [node name="Werewolf" type="KinematicBody2D"]
 input_pickable = false
-collision_layer = 9
-collision_mask = 9
+collision_layer = 524297
+collision_mask = 524297
 collision/safe_margin = 0.08
 motion/sync_to_physics = false
 script = ExtResource( 1 )
@@ -1202,7 +1202,6 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="UI" type="Node2D" parent="Camera2D"]
-editor/display_folded = true
 z_index = 1
 
 [node name="PlayerControl" parent="Camera2D/UI" instance=ExtResource( 3 )]
@@ -1250,6 +1249,26 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/InputArea"]
 shape = SubResource( 19 )
+
+[node name="AreaLabel" type="Label" parent="Camera2D/UI"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -67.0
+margin_top = -104.0
+margin_right = 29.0
+margin_bottom = -90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "People around: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="LoadingScreen" type="Sprite" parent="Camera2D"]
 visible = false

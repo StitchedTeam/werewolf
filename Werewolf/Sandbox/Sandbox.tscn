@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sandbox/Sandbox.gd" type="Script" id=1]
 [ext_resource path="res://Props/Scenario.tscn" type="PackedScene" id=2]
@@ -7,6 +7,32 @@
 [ext_resource path="res://Characters/Enemies/GenericEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Shepherd/Shepherd.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Props/Church.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 450, 324 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 736, 490 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 480, 520 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( -500, -400, 0, -400, 0, 0, 650, 0, 650, 400, -1200, 400, -1200, 0, -500, 0 )
+_sections_unfolded = [ "points" ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 929, 285.315 )
 
 [node name="Sandbox" type="Node"]
 script = ExtResource( 1 )
@@ -161,9 +187,11 @@ patrol_offset = 45
 area = 5
 
 [node name="Churches" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Church1" parent="Churches" instance=ExtResource( 7 )]
 position = Vector2( 606, 16 )
+_sections_unfolded = [ "Collision" ]
 area = 1
 
 [node name="Church2" parent="Churches" instance=ExtResource( 7 )]
@@ -181,4 +209,100 @@ area = 4
 [node name="Church5" parent="Churches" instance=ExtResource( 7 )]
 position = Vector2( 280, 1876 )
 area = 5
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Area1" type="Area2D" parent="Areas"]
+editor/display_folded = true
+position = Vector2( 450, 241 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area1"]
+position = Vector2( -46, 19 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Area2" type="Area2D" parent="Areas"]
+editor/display_folded = true
+position = Vector2( 2280, 414 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2"]
+position = Vector2( -10, -12.685 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Area3" type="Area2D" parent="Areas"]
+editor/display_folded = true
+position = Vector2( 2780, 1550 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area3"]
+position = Vector2( -120, 100 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Area4" type="Area2D" parent="Areas"]
+editor/display_folded = true
+position = Vector2( 950, 1170 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area4"]
+position = Vector2( 320, -90 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "shape" ]
+
+[node name="Area5" type="Area2D" parent="Areas"]
+editor/display_folded = true
+position = Vector2( 830, 1900 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area5"]
+position = Vector2( 170, 7 )
+shape = SubResource( 5 )
 

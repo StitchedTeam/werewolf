@@ -20,6 +20,8 @@ var life_changing = false
 var game_over = false
 var moonlight
 
+var area
+
 func _ready():
 	$AttackTimer.connect("timeout", self, "on_attack_end")
 	$TransformTimer.connect("timeout", self, "on_transform_end")
@@ -224,7 +226,10 @@ func on_shapeshifted_back():
 	moonlight.detect_enabled = true
 	pass
 
-
-
-
+func update_area():
+	if area != 0: 
+		$Camera2D/UI/AreaLabel.text = ("People around: ") + String(GameGlobals.enemies_alive[String(area)])
+		$Camera2D/UI/AreaLabel.set_visible(true)
+	else: $Camera2D/UI/AreaLabel.set_visible(false)
+	pass
 
