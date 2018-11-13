@@ -3,15 +3,15 @@ extends Node
 var save = "user://save_game.dat"
 var file = File.new()
 
-const PRIEST_ALIVE = {"1": true}
-const CHURCH_EXISTS = {"1": true}
+const PRIEST_ALIVE = {"1": true, "2": true, "3": true, "4": true, "5": true}
+const CHURCH_EXISTS = {"1": true, "2": true, "3": true, "4": true, "5": true}
 const LIFE = 100
 
-var priest_alive = {"1": true}
-var church_exists = {"1": true}
+var priest_alive = {"1": true, "2": true, "3": true, "4": true, "5": true}
+var church_exists = {"1": true, "2": true, "3": true, "4": true, "5": true}
 var life = 100
 
-var enemies_alive = {"1": 4}
+var enemies_alive = {"1": 4, "2": 4, "3": 4, "4": 4, "5": 4}
 
 var saved = false
 

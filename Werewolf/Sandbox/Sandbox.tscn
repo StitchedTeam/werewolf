@@ -20,10 +20,9 @@ position = Vector2( 404, 203 )
 position = Vector2( 246, -216.659 )
 
 [node name="Enemies" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="GenericEnemy" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 576, 406 )
+position = Vector2( 576, 408 )
 run_state_offset = 400
 area = 1
 
@@ -44,15 +43,142 @@ character_spritesheet = 1
 run_state_offset = 400
 area = 1
 
+[node name="GenericEnemy5" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 2730, 419.315 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 2
+
+[node name="GenericEnemy6" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1779, 220 )
+run_state_offset = 400
+area = 2
+
+[node name="GenericEnemy7" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1839, 820 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 2
+
+[node name="GenericEnemy8" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 2140, 540 )
+run_state_offset = 400
+area = 2
+
+[node name="GenericEnemy9" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 2600, 1600 )
+run_state_offset = 400
+area = 3
+
+[node name="GenericEnemy10" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 2344, 2020 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 3
+
+[node name="GenericEnemy11" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 2890, 1990 )
+run_state_offset = 400
+area = 3
+
+[node name="GenericEnemy12" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 3050, 2060 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 3
+
+[node name="GenericEnemy13" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1480, 1180 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 4
+
+[node name="GenericEnemy14" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1090, 850 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 4
+
+[node name="GenericEnemy15" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1600, 1930 )
+run_state_offset = 400
+area = 4
+
+[node name="GenericEnemy16" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1190, 1300 )
+run_state_offset = 400
+area = 4
+
+[node name="GenericEnemy17" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 220, 2000 )
+run_state_offset = 400
+area = 5
+
+[node name="GenericEnemy18" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 930, 1900 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 5
+
+[node name="GenericEnemy19" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 360, 1400 )
+character_spritesheet = 1
+run_state_offset = 400
+area = 5
+
+[node name="GenericEnemy20" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 670, 1758 )
+run_state_offset = 400
+area = 5
+
 [node name="Shepherds" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="Shepherd" parent="Shepherds" instance=ExtResource( 6 )]
+[node name="Shepherd1" parent="Shepherds" instance=ExtResource( 6 )]
 position = Vector2( 616, 157 )
 patrol_offset = 45
 area = 1
 
-[node name="Church" parent="." instance=ExtResource( 7 )]
+[node name="Shepherd2" parent="Shepherds" instance=ExtResource( 6 )]
+position = Vector2( 2286, 213 )
+patrol_offset = 45
+area = 2
+
+[node name="Shepherd3" parent="Shepherds" instance=ExtResource( 6 )]
+position = Vector2( 2931, 1206 )
+patrol_offset = 45
+area = 3
+
+[node name="Shepherd4" parent="Shepherds" instance=ExtResource( 6 )]
+position = Vector2( 1050, 1240 )
+patrol_offset = 45
+area = 4
+
+[node name="Shepherd5" parent="Shepherds" instance=ExtResource( 6 )]
+position = Vector2( 210, 1830 )
+patrol_offset = 45
+area = 5
+
+[node name="Churches" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Church1" parent="Churches" instance=ExtResource( 7 )]
 position = Vector2( 606, 16 )
 area = 1
+
+[node name="Church2" parent="Churches" instance=ExtResource( 7 )]
+position = Vector2( 2360, 190 )
+area = 2
+
+[node name="Church3" parent="Churches" instance=ExtResource( 7 )]
+position = Vector2( 3000, 1290 )
+area = 3
+
+[node name="Church4" parent="Churches" instance=ExtResource( 7 )]
+position = Vector2( 960, 1240 )
+area = 4
+
+[node name="Church5" parent="Churches" instance=ExtResource( 7 )]
+position = Vector2( 280, 1876 )
+area = 5
 
