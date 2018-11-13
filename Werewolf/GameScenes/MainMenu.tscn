@@ -55,14 +55,14 @@ margin_bottom = 40.0
 editor/display_folded = true
 margin_left = 10.0
 margin_top = 13.0
-margin_right = 133.0
-margin_bottom = 43.0
+margin_right = 138.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 texture_disabled = ExtResource( 4 )
 texture_focused = ExtResource( 4 )
-stretch_mode = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -153,7 +153,6 @@ margin_top = 85.0
 margin_right = 160.0
 margin_bottom = 105.0
 theme = ExtResource( 6 )
-ticks_on_borders = false
 __meta__ = {
 "_edit_group_": true
 }
@@ -173,7 +172,6 @@ margin_top = 135.0
 margin_right = 160.0
 margin_bottom = 155.0
 theme = ExtResource( 6 )
-ticks_on_borders = false
 __meta__ = {
 "_edit_group_": true
 }
