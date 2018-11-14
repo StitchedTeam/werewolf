@@ -17,6 +17,9 @@ var saved = false
 
 var player
 
+var music_volume = -4
+var sfx_volume = 0
+
 func save(content):
 	saved = true
 	file.open("user://save_game.dat", File.WRITE)

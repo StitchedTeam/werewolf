@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/auto_on.wav-e2d0a6df7b1723f4b20684ec067e33cc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/auto_on.wav"
+dest_files=[ "res://.import/auto_on.wav-e2d0a6df7b1723f4b20684ec067e33cc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/area_complete.wav-4ebf46f48b786d05c77a5dc7d9f90fb6.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/area_complete.wav"
+dest_files=[ "res://.import/area_complete.wav-4ebf46f48b786d05c77a5dc7d9f90fb6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
