@@ -1,1 +1,0 @@
-For English, please delete the file "japanese.ico".
