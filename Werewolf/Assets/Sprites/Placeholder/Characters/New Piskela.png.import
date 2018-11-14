@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LifeBar (1).png-104e2b5dcc1b363174d9f5cd301b226c.stex"
+path="res://.import/New Piskela.png-923a3cab568381951428355c03fe237f.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/LifeBar (1).png"
-dest_files=[ "res://.import/LifeBar (1).png-104e2b5dcc1b363174d9f5cd301b226c.stex" ]
+source_file="res://Assets/Sprites/Placeholder/Characters/New Piskela.png"
+dest_files=[ "res://.import/New Piskela.png-923a3cab568381951428355c03fe237f.stex" ]
 
 [params]
 
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

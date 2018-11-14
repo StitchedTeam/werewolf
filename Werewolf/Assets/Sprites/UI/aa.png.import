@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LifeBar (1).png-104e2b5dcc1b363174d9f5cd301b226c.stex"
+path="res://.import/aa.png-6a1c12dac51335a6b2db358440e56981.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/LifeBar (1).png"
-dest_files=[ "res://.import/LifeBar (1).png-104e2b5dcc1b363174d9f5cd301b226c.stex" ]
+source_file="res://Assets/Sprites/UI/aa.png"
+dest_files=[ "res://.import/aa.png-6a1c12dac51335a6b2db358440e56981.stex" ]
 
 [params]
 
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

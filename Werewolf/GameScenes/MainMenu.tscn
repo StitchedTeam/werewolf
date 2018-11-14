@@ -178,6 +178,7 @@ custom_styles/slider = SubResource( 5 )
 min_value = -60.0
 max_value = 10.0
 value = -4.0
+ticks_on_borders = false
 __meta__ = {
 "_edit_group_": true
 }
@@ -203,6 +204,7 @@ custom_icons/grabber = ExtResource( 6 )
 custom_styles/slider = SubResource( 5 )
 min_value = -60.0
 max_value = 10.0
+ticks_on_borders = false
 __meta__ = {
 "_edit_group_": true
 }

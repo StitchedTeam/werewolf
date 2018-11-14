@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Characters/Enemies/GenericEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/all_animations/8YfFIUja.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1) (1).png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskela.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Placeholder/Characters/New Piskel (1).png" type="Texture" id=4]
 [ext_resource path="res://Assets/Audio/SFX/scared.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Audio/SFX/enemy_death.wav" type="AudioStream" id=6]
 
@@ -224,7 +224,7 @@ tracks/1/keys = {
 [sub_resource type="ParticlesMaterial" id=5]
 
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 2.19
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, -20, 0 )
@@ -235,13 +235,13 @@ orbit_velocity_random = 0.0
 [sub_resource type="ParticlesMaterial" id=6]
 
 emission_shape = 1
-emission_sphere_radius = 20.0
+emission_sphere_radius = 1.0
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1.0
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-anim_speed = 2.0
 
 [sub_resource type="CapsuleShape2D" id=7]
 
@@ -297,13 +297,15 @@ one_shot = true
 
 [node name="ScaredParticles" type="Particles2D" parent="."]
 position = Vector2( -0.349655, 0.181755 )
+scale = Vector2( 10, 10 )
 emitting = false
-amount = 5
+amount = 7
 one_shot = true
 process_material = SubResource( 5 )
 texture = ExtResource( 3 )
 
 [node name="DeathParticles" type="Particles2D" parent="."]
+scale = Vector2( 20, 20 )
 emitting = false
 amount = 10
 lifetime = 0.5

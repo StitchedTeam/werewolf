@@ -64,7 +64,6 @@ stream = ExtResource( 4 )
 pause_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 pause_mode = 2
@@ -72,8 +71,10 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="PauseButton" type="TextureButton" parent="CanvasLayer/UI"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 46.0
+margin_bottom = 45.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )

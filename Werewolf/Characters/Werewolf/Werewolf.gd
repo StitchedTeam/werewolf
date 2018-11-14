@@ -37,7 +37,7 @@ func _physics_process(delta):
 	wolf_life()
 	death()
 	attack_input()
-	low_life()
+	#low_life()
 	audio_volume()
 	pass
 
@@ -232,8 +232,12 @@ func on_shapeshifted_back():
 	pass
 
 func update_area():
+	var priest
+	if GameGlobals.priest_alive.has(String(area)):
+		priest = 1
+	else: priest = 0
 	if area != 0: 
-		$Camera2D/UI/AreaLabel.text = ("People around: ") + String(GameGlobals.enemies_alive[String(area)])
+		$Camera2D/UI/AreaLabel.text = ("People around: ") + String(GameGlobals.enemies_alive[String(area)] + priest)
 		$Camera2D/UI/AreaLabel.set_visible(true)
 	else: $Camera2D/UI/AreaLabel.set_visible(false)
 	pass
