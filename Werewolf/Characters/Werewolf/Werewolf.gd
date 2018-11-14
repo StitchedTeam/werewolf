@@ -37,7 +37,8 @@ func _physics_process(delta):
 	wolf_life()
 	death()
 	attack_input()
-	
+	low_life()
+	audio_volume()
 	pass
 
 func wolf_life():
@@ -91,6 +92,7 @@ func switch_human():
 	transforming = true
 	moonlight.transforming()
 	$AnimationPlayer.play("Transform")
+	$WolfTransformAudio.play()
 	$TransformTimer.start()
 	pass
 
@@ -190,6 +192,8 @@ func on_attack_input_end():
 	pass
 
 func on_attack_end():
+	if !$AttackAudio.is_playing():
+			$AttackAudio.play()
 	attacking = false
 	manage_animation()
 	if $RayCast2D.get_collider() != null:
@@ -206,6 +210,7 @@ func on_transform_end():
 		moonlight.back_shifting()
 		$BackShapeshiftTimer.start()
 		human = true
+		$HumanTransformAudio.play()
 		$Camera2D/UI/LifeHUD.set_visible(false)
 		manage_animation()
 	pass
@@ -233,3 +238,22 @@ func update_area():
 	else: $Camera2D/UI/AreaLabel.set_visible(false)
 	pass
 
+func low_life():
+	if life <= 20:
+		if !$LowLifeAudio.is_playing():
+			$LowLifeAudio.play()
+	else:
+		if $LowLifeAudio.is_playing():
+			$LowLifeAudio.stop()
+	pass
+
+func audio_volume():
+	if $AttackAudio.volume_db != GameGlobals.sfx_volume:
+		$AttackAudio.volume_db = GameGlobals.sfx_volume
+	if $LowLifeAudio.volume_db != GameGlobals.sfx_volume:
+		$LowLifeAudio.volume_db = GameGlobals.sfx_volume
+	if $HumanTransformAudio.volume_db != GameGlobals.sfx_volume:
+		$HumanTransformAudio.volume_db = GameGlobals.sfx_volume
+	if $WolfTransformAudio.volume_db != GameGlobals.sfx_volume:
+		$WolfTransformAudio.volume_db = GameGlobals.sfx_volume
+	pass

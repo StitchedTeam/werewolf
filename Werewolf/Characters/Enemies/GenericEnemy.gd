@@ -31,6 +31,7 @@ func _process(delta):
 	manage_animation()
 	manage_state()
 	damage()
+	audio_volume()
 	
 	pass
 
@@ -100,6 +101,7 @@ func patrol():
 	if $RayCast2DSight.get_collider() == player:
 		if player.human == false:
 			state = 1
+			$Scared.play()
 			$ScaredParticles.set_emitting(true)
 			$ScaredParticles.restart()
 	pass
@@ -154,6 +156,7 @@ func damage():
 			if !death_started:
 				$DeathParticles.set_emitting(true)
 				$DeathTimer.start()
+				$Death.play()
 				death_started = true
 	pass
 
@@ -213,4 +216,11 @@ func load_spritesheet():
 		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_15.png")
 	elif character_spritesheet == 18:
 		$Sprite.texture = load("res://Assets/Sprites/Characters/Enemy_16.png")
+	pass
+
+func audio_volume():
+	if $Scared.volume_db != GameGlobals.sfx_volume:
+		$Scared.volume_db = GameGlobals.sfx_volume
+	if $Death.volume_db != GameGlobals.sfx_volume:
+		$Death.volume_db = GameGlobals.sfx_volume
 	pass

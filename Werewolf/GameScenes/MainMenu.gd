@@ -27,6 +27,7 @@ func buttons_check():
 		if GameGlobals.saved:
 			$Panel/NewGameCheck.visible = true
 			$Panel/StartButtons.visible = false
+			$Label.visible = false
 			$ClickCount.start()
 		else:
 			start_game()
@@ -61,6 +62,7 @@ func buttons_check():
 		initial_buttons_enabled = true
 		$Panel/NewGameCheck.visible = false
 		$Panel/StartButtons.visible = true
+		$Label.visible = true
 	
 	
 	pass

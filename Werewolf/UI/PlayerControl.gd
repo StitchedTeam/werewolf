@@ -16,10 +16,18 @@ func _ready():
 	pass
 
 func _process(delta):
+	audio_volume()
 	enable_auto()
 	drag_and_place()
 	# To make Input Area's empty collider follow mouse position
 	$Input_area.position = get_local_mouse_position()
+	pass
+
+func audio_volume():
+	if $AutoOn.volume_db != GameGlobals.sfx_volume:
+		$AutoOn.volume_db = GameGlobals.sfx_volume
+	if $AutoOff.volume_db!= GameGlobals.sfx_volume:
+		$AutoOff.volume_db = GameGlobals.sfx_volume
 	pass
 
 func enable_auto():
@@ -28,9 +36,11 @@ func enable_auto():
 			if auto_enabled:
 				auto_enabled = false
 				$Inside_area/Inside_sprite.frame = 0
+				$AutoOff.play()
 			elif !auto_enabled:
 				auto_enabled = true
 				$Inside_area/Inside_sprite.frame = 1
+				$AutoOn.play()
 			first_click = false
 		else:
 			$TimerDrag.start()

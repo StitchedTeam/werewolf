@@ -28,6 +28,8 @@ func _ready():
 func _process(delta):
 	patrol()
 	damage()
+	if $DeathAudio.volume_db != GameGlobals.sfx_volume:
+		$DeathAudio.volume_db = GameGlobals.sfx_volume
 	pass
 
 func manage_animation():
@@ -105,6 +107,7 @@ func damage():
 			$DeathParticles.set_emitting(true)
 			death_started = true
 			$DeathTimer.start()
+			$DeathAudio.play()
 	pass
 
 func death_animation_end():

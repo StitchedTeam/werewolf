@@ -18,7 +18,7 @@ var saved = false
 var player
 
 var music_volume = -4
-var sfx_volume = 0
+var sfx_volume = -1
 
 func save(content):
 	saved = true
